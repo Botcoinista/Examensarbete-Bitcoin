@@ -1,8 +1,8 @@
 body {
-    background-color: rgb(255, 240, 221);
+    background-color: rgb(11, 11, 11);
 }
 
-.search-wrapper {
+/* .search-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -33,4 +33,4 @@ input {
 
 .hide {
     display: none;
-}
+} */
