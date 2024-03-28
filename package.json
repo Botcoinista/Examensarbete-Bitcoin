@@ -1,24 +1,25 @@
 {
   "name": "examensarbete-bitcoin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Building a website for starting to learn about bitcoin",
   "main": "backend/app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon backend/app.js localhost 8080"
   },
-  "author": "jreinhold@evolution.com",
+  "author": "josef.r@hotmail.se",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "2.4.3",
     "cookie-parser": "1.4.6",
-    "dotenv": "16.0.1",
     "express": "4.16.4",
     "jsonwebtoken": "8.5.1",
     "mongoose": "6.12.7",
     "nodemailer": "6.9.13"
   },
   "devDependencies": {
+    "dotenv": "16.4.5",
+    "mongodb": "6.5.0",
     "nodemon": "2.0.15"
   }
 }

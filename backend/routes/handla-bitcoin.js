@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("handla-bitcoin");
+    res.send("Handla Bitcoin");
 });
 
 module.exports = router;
