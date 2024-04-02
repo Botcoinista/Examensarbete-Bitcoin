@@ -38,11 +38,11 @@ app.use("/om", omRouter);
 app.use("/podcasts", podcastsRouter);
 
 // Error handling middleware
-app.use((err, req, res, next) => {
-    console.log("Request received:", req.method, req.url);
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+// app.use((err, req, res, next) => {
+//     console.log("Request received:", req.method, req.url);
+//     console.error(err.stack);
+//     res.status(500).send('Something broke!');
+// });
 
 
 // Connecting to the database
