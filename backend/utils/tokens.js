@@ -1,20 +1,16 @@
 const { sign } = require('jsonwebtoken');
 
-// Retrieve the secret keys for signing JWT tokens from environment variables
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
-const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET;
-
 // Signing the access token
 const createAccessToken = (id) => {
-    return sign({ id }, accessTokenSecret, {
+    return sign({ id }, process.env.REFRESH_TOKEN_SECRET, {
         expiresIn: "15" // 15 minutes
     });
 }
 
 // Signing the refresh token
 const createRefreshToken = (id) => {
-    return sign({ id }, refreshTokenSecret, {
-        expiresIn: '90d', // 7 days
+    return sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn: '90d', // 90 days
     });
 }
 
@@ -38,5 +34,5 @@ module.exports = {
     createAccessToken,
     createRefreshToken,
     sendAccessToken,
-    sendRefreshToken
+    sendRefreshToken,
 }
