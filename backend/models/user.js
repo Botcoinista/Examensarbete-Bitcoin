@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { use } = require('../routes');
 
 const userSchema = new Schema({
     email: {
@@ -10,6 +11,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    username: {
+        type: String,
+    },
     verified: {
         type: Boolean,
         default: false
@@ -17,6 +21,6 @@ const userSchema = new Schema({
     refreshToken: {
         type: String,
     }
-    });
+    }, { timestamps: true });
 
     module.exports = model("User", userSchema);

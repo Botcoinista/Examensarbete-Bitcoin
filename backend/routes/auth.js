@@ -1,26 +1,29 @@
 const express = require("express");
 const router = express.Router();
-const { hash }= require("bcryptjs");
+const { hash } = require("bcryptjs");
 // Importing the User model
 const User = require("../models/user");
 
 // Signup request
 router.post("/signup", async (req,res) => {
     try {
-        const { email, password} = req.body;
+        const { email, password, username } = req.body;
         // Check if the user already exists
-        const user = await User.findOne({ email: email});
+        const userExists = await User.findOne({ email: email});
+        console.log(userExists);
 
         //if user already exists
-        if (user) {
+        if (userExists) {
             return res.status(500).json({ message: "User already exists!", type: "warning" });
         }
         // If user doesnt exist, create a new user
-        // Hashing the password
+        /* Hashing the password, the second argument determines how secure the hash is,
+           with a higher number making it harder for attackers to guess the password. */
         const hashedPassword = await hash(password, 10);
         const newUser = new User({
             email: email,
             password: hashedPassword,
+            username: username
         });
         // Save the user to the database
         await newUser.save();
@@ -32,6 +35,9 @@ router.post("/signup", async (req,res) => {
         error
     }
 })
+
+
+
 
 module.exports = router;
 
