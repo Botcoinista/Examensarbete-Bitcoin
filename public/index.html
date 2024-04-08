@@ -134,6 +134,54 @@
       </nav>
 
       <div class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"></div>
+
+
+
+     <!-- Register Form -->
+      <div class="flex justify-center items-center h-screen ">
+          <div class="rounded-lg overflow-hidden shadow-lg mx-auto max-w-md bg-white py-8 px-6 w-full">
+            <h2 class="text-2xl font-bold mb-4 text-center">User Registration</h2>
+            <form action="/register" method="POST" class="space-y-6">
+                <div>
+                    <label for="email" class="block font-medium">Email*</label>
+                    <input type="email" id="email" name="email" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="password" class="block font-medium">Password*</label>
+                    <input type="password" id="password" name="password" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="username" class="block font-medium">Username</label>
+                    <input type="text" id="username" name="username" class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Register</button>
+            </form>
+        </div>
+      </div>
+
+
+     <!-- LoginForm -->
+      <div class="flex justify-center items-center h-screen ">
+          <div class="rounded-lg overflow-hidden shadow-lg mx-auto max-w-md bg-white py-8 px-6 w-full">
+            <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+            <form action="/login" method="POST" class="space-y-6">
+                <div>
+                    <label for="email" class="block font-medium">Email*</label>
+                    <input type="email" id="email" name="email" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="password" class="block font-medium">Password*</label>
+                    <input type="password" id="password" name="password" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="username" class="block font-medium">Username</label>
+                    <input type="text" id="username" name="username" class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="bg-orange-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Login</button>
+            </form>
+        </div>
+      </div>
+    
       
 
 <script src="script.js"></script>
