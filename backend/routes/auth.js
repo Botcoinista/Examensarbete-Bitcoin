@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { hash, compare } = require("bcryptjs");
 const { verify } = require("jsonwebtoken");
-// Importing the User model
+
 const User = require("../models/user");
+
 // Importing the helper functions for creating and sending tokens
 const {
   createAccessToken,
@@ -11,7 +12,12 @@ const {
   sendAccessToken,
   sendRefreshToken,
 } = require("../utils/tokens");
+const { protected } = require('../utils/protected')
 
+/* GET main auth page. */
+router.get('/', async (req, res) => {
+	res.send('Hello Express!! 👋, this is Auth end point')
+})
 
 // SIGNUP REQUEST
 router.post("/signup", async (req, res) => {
@@ -45,15 +51,14 @@ router.post("/signup", async (req, res) => {
       type: "success",
     });
   } catch (error) {
-      res.status(500).json({
-          message: "Error creating user!",
-          type: "error",
-          error,
-        });
-        console.log("Error creating user:", error)
+    res.status(500).json({
+      message: "Error creating user!",
+      type: "error",
+      error,
+    });
+    console.log("Error creating user:", error);
   }
 });
-
 
 // LOGIN REQUEST
 router.post("/login", async (req, res) => {
@@ -80,7 +85,6 @@ router.post("/login", async (req, res) => {
     const accessToken = createAccessToken(user._id);
     const refreshToken = createRefreshToken(user._id);
 
-
     // Put the new refresh token in the database
     user.refreshToken = refreshToken;
     /* Saves the user to the database to update the refreshToken field.
@@ -90,10 +94,8 @@ router.post("/login", async (req, res) => {
     // Send the response
     sendRefreshToken(res, refreshToken);
     sendAccessToken(req, res, accessToken);
-
   } catch (error) {
     res.status(500).json({
-
       message: "Error signing in!",
       type: "error",
       error,
@@ -101,79 +103,98 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
 // LOGOUT REQUEST
 router.post("/logout", (_req, res) => {
-    // Clear cookies
-    res.clearCookie("refreshToken");
-    return res.json({
-        message: "Logged out successfully! 🤗",
-        type: "success",
-    });
-})
-
+  // Clear cookies
+  res.clearCookie("refreshToken");
+  return res.json({
+    message: "Logged out successfully! 🤗",
+    type: "success",
+  });
+});
 
 // REFRESH TOKEN REQUEST
 router.post("/refresh_token", async (req, res) => {
+  try {
+    const { refreshToken } = req.cookies;
+    // If there is no refresh token in the cookies, return an error
+    if (!refreshToken)
+      return res.status(500).json({
+        message: "No refresh token! 🤔",
+        type: "error",
+      });
+    // If there is a refresh token, verify it
+    let id;
     try {
-        const { refreshToken } = req.cookies;
-        // If there is no refresh token in the cookies, return an error
-        if (!refreshToken) 
-            return res.status(500).json({
-                message: "No refresh token! 🤔",
-                type: "error",
-            });
-        // If there is a refresh token, verify it
-        let id
-        try {
-            id = verify(refreshToken, process.env.REFRESH_TOKEN_SECRET).id;
-        }   catch (error) {
-            return res.status(500).json({
-                message: "Invalid refresh token! 🤔",
-                type: "error",
-            });
-        }
-        // If refresh token is invalid, return error
-        if (!id)
-            return res.status(500).json({
-                message: "Invalid refresh token 🤔",
-                type: "error",
-        });
-        // If the refresh token is valid, check if the user exists
-        const user = await User.findById(id);
-        if (!user)
-            return res.status(500).json({
-                message: "User not found! 😢",
-                type: "error",
-            });
-        // If the user exists, check if the refresh token is valid, return error if it is incorrect
-        if (user.refreshToken !== refreshToken)
-            return res.status(500).json({
-                message: "Invalid refresh token! 🤔",
-                type: "error",
-            });
-        // If the refresh token is valid, generate a new tokens
-        const accessToken = createAccessToken(user._id);
-        const newRefreshToken = createRefreshToken(user._id);
-        // Update the refresh token in the database
-        user.refreshToken = newRefreshToken;
-        // Send the new tokens as response
-        sendRefreshToken(res, newRefreshToken);
-        return res.json({
-            accessToken,
-            message: "Tokens refreshed successfully! 🥳",
-            type: "success",
-        });
+      id = verify(refreshToken, process.env.REFRESH_TOKEN_SECRET).id;
     } catch (error) {
-        return res.status(500).json({
-            message: "Error refreshing token! 😢",
-            type: "error",
-            error,
-        });
+      return res.status(500).json({
+        message: "Invalid refresh token! 🤔",
+        type: "error",
+      });
     }
+    // If refresh token is invalid, return error
+    if (!id)
+      return res.status(500).json({
+        message: "Invalid refresh token 🤔",
+        type: "error",
+      });
+    // If the refresh token is valid, check if the user exists
+    const user = await User.findById(id);
+    if (!user)
+      return res.status(500).json({
+        message: "User not found! 😢",
+        type: "error",
+      });
+    // If the user exists, check if the refresh token is valid, return error if it is incorrect
+    if (user.refreshToken !== refreshToken)
+      return res.status(500).json({
+        message: "Invalid refresh token! 🤔",
+        type: "error",
+      });
+    // If the refresh token is valid, generate new tokens
+    const accessToken = createAccessToken(user._id);
+    const newRefreshToken = createRefreshToken(user._id);
+    // Update the refresh token in the database
+    user.refreshToken = newRefreshToken;
+    // Send the new tokens as response
+    sendRefreshToken(res, newRefreshToken);
+    return res.json({
+      accessToken,
+      message: "Tokens refreshed successfully! 🥳",
+      type: "success",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Error refreshing token! 😢",
+      type: "error",
+      error,
+    });
+  }
 });
 
-
-
+// PROTECTED ROUTE
+router.get("/protected", verify, async (req, res) => {
+  try {
+    // If user exists in the request, send the data
+    if (req.user)
+      return res.json({
+        message: "You are logged in! 🤗",
+        type: "success",
+        user: req.user,
+      });
+    // If user doesn't exit, return error
+    return res.status(500).json({
+      message: "You are not logged in! 😢",
+      type: "error",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Error getting protected route! 😢",
+      type: "error",
+      error,
+    });
+  }
+});
 
 module.exports = router;

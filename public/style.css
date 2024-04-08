@@ -3,6 +3,16 @@ body {
     color: white;
 }
 
+
+.custom-focus {
+    border: 1px solid #ccc; /* Set default border color */
+}
+
+.custom-focus:focus {
+    border-color: orange; /* Change border color when focused */
+}
+
+
 /* .search-wrapper {
     display: flex;
     flex-direction: column;

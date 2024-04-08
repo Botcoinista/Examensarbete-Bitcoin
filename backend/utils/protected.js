@@ -4,8 +4,9 @@ const User = require("../models/user");
 const protected = async (req, res, next) => {
   // Get the token from the header
   const authorization = req.headers["authorization"];
+  console.log("Authorization:", authorization)
   // If we don´t have a token, return an error
-  if (!token)
+  if (!authorization)
     return res.status(500).json({
       message: "There is no token 🤔",
       type: "error",
@@ -26,8 +27,7 @@ const protected = async (req, res, next) => {
   // If the token is invalid, return an error
   if (!id)
     return (
-      res.status(500),
-      json({
+      res.status(500).json({
         message: "Invalid token! 🤔",
         type: "error",
       })

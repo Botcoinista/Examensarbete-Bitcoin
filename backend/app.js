@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/", indexRouter);
-app.use("/auth", authRouter);
+app.use("/auth/", authRouter);
 app.use("/bitcoin-influencers", bitcoinInfluencersRouter);
 app.use("/guider", guiderRouter);
 app.use("/handla-bitcoin", handlaBitcoinRouter);
