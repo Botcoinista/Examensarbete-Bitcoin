@@ -20,9 +20,16 @@ router.get('/', async (req, res) => {
 })
 
 // SIGNUP REQUEST
-router.post("/signup", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { email, password, username } = req.body;
+
+    if (!email || !password) {
+        return res.status(500).json({
+            message: "Please fill in all fields! 😢",
+            type: "error",
+        });
+    }
     // Check if the user already exists
     const userExists = await User.findOne({ email: email });
     // console.log(userExists);

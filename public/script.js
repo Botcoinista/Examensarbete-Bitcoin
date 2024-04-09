@@ -42,7 +42,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
   
     // Send HTTP request to backend
     try {
-      const response = await fetch('http://localhost:9999/auth/signup', {
+      const response = await fetch('http://localhost:9999/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
