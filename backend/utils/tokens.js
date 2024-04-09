@@ -30,6 +30,15 @@ const sendRefreshToken = ( res, refreshtoken) => {
     });
 }
 
+// password reset token
+const createPasswordResetToken = ({ _id, email, password }) => {
+    const secret = password;
+    return sign({ id: _id, email }, secret, {
+      expiresIn: 15 * 60, // 15 minutes
+    });
+  };
+  
+
 module.exports = {
     createAccessToken,
     createRefreshToken,

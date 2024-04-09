@@ -19,9 +19,10 @@ router.get('/', async (req, res) => {
 	res.send('Hello Express!! 👋, this is Auth end point')
 })
 
-// SIGNUP REQUEST
+// REGISTER REQUEST
 router.post("/register", async (req, res) => {
   try {
+    console.log(req.body)
     const { email, password, username } = req.body;
 
     if (!email || !password) {
@@ -32,10 +33,11 @@ router.post("/register", async (req, res) => {
     }
     // Check if the user already exists
     const userExists = await User.findOne({ email: email });
-    // console.log(userExists);
+    console.log(userExists);
 
     //if user already exists
     if (userExists) {
+      console.log("User already exists!")
       return res.status(500).json({
         message: "User already exists!",
         type: "warning",
@@ -51,13 +53,16 @@ router.post("/register", async (req, res) => {
       username: username,
     });
     // Save the user to the database
+    console.log("before save", newUser)
     await newUser.save();
+    console.log("after save", newUser)
     // Send a success response
     res.status(200).json({
       message: "User created successfully! 🥳",
       type: "success",
     });
   } catch (error) {
+    console.log("catch", error)
     res.status(500).json({
       message: "Error creating user!",
       type: "error",
@@ -93,7 +98,7 @@ router.post("/login", async (req, res) => {
     const refreshToken = createRefreshToken(user._id);
 
     // Put the new refresh token in the database
-    user.refreshToken = refreshToken;
+    user.refreshtoken = refreshToken;
     /* Saves the user to the database to update the refreshToken field.
      This ensures that the latest refresh token is stored for the user's session management */
     await user.save();
@@ -112,8 +117,8 @@ router.post("/login", async (req, res) => {
 
 // LOGOUT REQUEST
 router.post("/logout", (_req, res) => {
-  // Clear cookies
-  res.clearCookie("refreshToken");
+  // clear cookies
+  res.clearCookie("refreshtoken");
   return res.json({
     message: "Logged out successfully! 🤗",
     type: "success",
@@ -123,9 +128,9 @@ router.post("/logout", (_req, res) => {
 // REFRESH TOKEN REQUEST
 router.post("/refresh_token", async (req, res) => {
   try {
-    const { refreshToken } = req.cookies;
+    const { refreshtoken } = req.cookies;
     // If there is no refresh token in the cookies, return an error
-    if (!refreshToken)
+    if (!refreshtoken)
       return res.status(500).json({
         message: "No refresh token! 🤔",
         type: "error",
@@ -133,7 +138,7 @@ router.post("/refresh_token", async (req, res) => {
     // If there is a refresh token, verify it
     let id;
     try {
-      id = verify(refreshToken, process.env.REFRESH_TOKEN_SECRET).id;
+      id = verify(refreshtoken, process.env.REFRESH_TOKEN_SECRET).id;
     } catch (error) {
       return res.status(500).json({
         message: "Invalid refresh token! 🤔",
@@ -154,7 +159,7 @@ router.post("/refresh_token", async (req, res) => {
         type: "error",
       });
     // If the user exists, check if the refresh token is valid, return error if it is incorrect
-    if (user.refreshToken !== refreshToken)
+    if (user.refreshtoken !== refreshtoken)
       return res.status(500).json({
         message: "Invalid refresh token! 🤔",
         type: "error",
@@ -163,13 +168,13 @@ router.post("/refresh_token", async (req, res) => {
     const accessToken = createAccessToken(user._id);
     const newRefreshToken = createRefreshToken(user._id);
     // Update the refresh token in the database
-    user.refreshToken = newRefreshToken;
+    user.refreshtoken = newRefreshToken;
     // Send the new tokens as response
     sendRefreshToken(res, newRefreshToken);
     return res.json({
-      accessToken,
       message: "Tokens refreshed successfully! 🥳",
       type: "success",
+      accessToken,
     });
   } catch (error) {
     return res.status(500).json({
@@ -203,5 +208,102 @@ router.get("/protected", verify, async (req, res) => {
     });
   }
 });
+
+const { createPasswordResetToken } = require("../utils/tokens");
+const {
+  transporter,
+  createPasswordResetUrl,
+  passwordResetTemplate,
+  passwordResetConfirmationTemplate,
+} = require("../utils/email");
+// send password reset email
+router.post("/send-password-reset-email", async (req, res) => {
+  try {
+    // get the user from the request body
+    const { email } = req.body;
+    // find the user by email
+    const user = await User.findOne({ email });
+    // if the user doesn't exist, return error
+    if (!user)
+      return res.status(500).json({
+        message: "User doesn't exist! 😢",
+        type: "error",
+      });
+    // create a password reset token
+    const token = createPasswordResetToken({ ...user, createdAt: Date.now() });
+    // create the password reset url
+    const url = createPasswordResetUrl(user._id, token);
+    // send the email
+    const mailOptions = passwordResetTemplate(user, url);
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err)
+        return res.status(500).json({
+          message: "Error sending email! 😢",
+          type: "error",
+        });
+      return res.json({
+        message: "Password reset link has been sent to your email! 📧",
+        type: "success",
+      });
+    });
+  } catch (error) {
+    res.status(500).json({
+      type: "error",
+      message: "Error sending email!",
+      error,
+    });
+  }
+});
+
+// reset password
+router.post("/reset-password/:id/:token", async (req, res) => {
+  try {
+    // get the user details from the url
+    const { id, token } = req.params;
+    // get the new password the request body
+    const { newPassword } = req.body;
+    // find the user by id
+    const user = await User.findById(id);
+    // if the user doesn't exist, return error
+    if (!user)
+      return res.status(500).json({
+        message: "User doesn't exist! 😢",
+        type: "error",
+      });
+    // verify if the token is valid
+    const isValid = verify(token, user.password);
+    // if the password reset token is invalid, return error
+    if (!isValid)
+      return res.status(500).json({
+        message: "Invalid token! 😢",
+        type: "error",
+      });
+    // set the user's password to the new password
+    user.password = await hash(newPassword, 10);
+    // save the user
+    await user.save();
+    // send the email
+    const mailOptions = passwordResetConfirmationTemplate(user);
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err)
+        return res.status(500).json({
+          message: "Error sending email! 😢",
+          type: "error",
+        });
+      return res.json({
+        message: "Email sent! 📧",
+        type: "success",
+      });
+    });
+  } catch (error) {
+    res.status(500).json({
+      type: "error",
+      message: "Error sending email!",
+      error,
+    });
+  }
+});
+
+
 
 module.exports = router;

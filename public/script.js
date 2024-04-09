@@ -49,6 +49,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         },
         body: JSON.stringify({ email, password, username })
       });
+      console.log("client side:", response.status)
   
       if (response.ok) {
         // Registration successful, display success message or redirect to another page
