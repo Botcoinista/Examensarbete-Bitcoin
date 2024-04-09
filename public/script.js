@@ -28,3 +28,38 @@
 //             return { name: user.name, email: user.email, element: card }      
 //         });
 //     })
+
+
+
+// Registration
+document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    // Collect form data
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+    const username = document.getElementById('register-username').value;
+  
+    // Send HTTP request to backend
+    try {
+      const response = await fetch('http://localhost:9999/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password, username })
+      });
+  
+      if (response.ok) {
+        // Registration successful, display success message or redirect to another page
+        console.log('Registration successful');
+      } else {
+        // Registration failed, display error message
+        console.error('Registration failed');
+      }
+    } catch (error) {
+      // Handle network errors or other exceptions
+      console.error('Error:', error);
+    }
+  });
+  
