@@ -4,10 +4,108 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="./style.css">
 <title>Podcasts</title>
 </head>
 <body>
-    <h1>Podcasts</h1>
-<script src=""></script>
+
+    <nav class="">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-20 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                
+              <!-- Hamburger Menu -->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center cursor-pointer">
+                <i class="fa-brands fa-bitcoin"></i>
+                <a href="index.html">
+                  <img class="h-10 w-auto" src="./images/BitcoinLogo.svg" alt="Bitcoininfo">
+                </a>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Hem</a>
+                  <a href="bitcoin-influencers.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Bitcoin-Influencers</a>
+                  <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Guider</a>
+                  <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Podcasts</a>
+                  <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nyheter</a>
+                  <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Handla-Bitcoin</a>
+                  <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Om</a>
+                </div>
+              </div>
+            </div>
+            <!-- Searchfield -->
+            <div class="hidden sm:block ml-8">
+                <input type="text" class="p-1 rounded-md text-black custom-focus" placeholder="Search...">
+            </div>
+
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+              <!-- Login button -->
+                <button id="loginButton" class="bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-4 py-1 px-1 rounded  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500">
+                    Login
+                </button>
+
+              <!-- Register button -->
+                <button id="registerButton" class="bg-blue-500 hover:bg-blue-700 text-white font-medium ml-4 py-1 px-1 rounded">
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+      
+        <!-- Mobile menu -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+           
+             <!-- Searchfield -->
+             <div class="">
+                <input type="text" class="p-1 rounded-md text-black custom-focus w-full" placeholder="Search...">
+            </div>
+            <a href="index.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+            <a href="bitcoin-influencers.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Bitcoin-Influencers</a>
+            <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Guider</a>
+            <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Podcasts</a>
+            <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Nyheter</a>
+            <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Handla-Bitcoin</a>
+            <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Om</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"></div>
+
+      <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
+
+
+    <h1 class="text-4xl">Podcasts</h1>
+<script src="script.js"></script>
 </body>
 </html>
