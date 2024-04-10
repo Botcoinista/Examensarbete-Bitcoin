@@ -1,3 +1,10 @@
+!!! IMPORTANT !!!
+/*
+Run (node generateSecrets.js) in the terminal to generate the secrets and write them to the .env file in the root directory of the project.
+Make sure to be in the correct directory when running the command (secrets-management).
+*/
+
+
 # Hello
 
 ## Planned Features
