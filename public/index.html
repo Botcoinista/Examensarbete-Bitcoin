@@ -30,10 +30,10 @@
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6">
           <div class="relative flex h-20 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 
               <!-- Hamburger Menu -->
-              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <button type="button" class="relative right-0 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="absolute -inset-0.5"></span>
                 <span class="sr-only">Open main menu</span>
                 <!--
@@ -54,13 +54,15 @@
                 </svg>
               </button>
             </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="hidden sm:flex flex-shrink-0 items-center cursor-pointer">
+            <div class="flex flex-1 items-center  sm:items-stretch sm:justify-start">
+              <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
                 <i class="fa-brands fa-bitcoin"></i>
                 <a href="index.html">
                   <img class="h-10 w-auto" src="./images/BitcoinLogo.svg" alt="Bitcoininfo">
                 </a>
               </div>
+
+              <!-- Navbar links -->
               <div class="hidden sm:ml-8 sm:block">
                 <div class="flex">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -76,7 +78,7 @@
             </div>
             <!-- Searchfield -->
             <div class="hidden sm:block ml-8">
-                <input type="text" class="p-1 rounded-md text-black custom-focus" placeholder="Search...">
+                <input type="text" class="px-3 py-2 rounded-md text-black custom-focus" placeholder="Search...">
             </div>
 
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -103,25 +105,18 @@
                 </div>
               </div> -->
 
-              <div class="block sm:hidden flex-shrink-0 items-center cursor-pointer mr-4">
-                <!-- This div will only be visible on screens smaller than XL -->
-                <i class="fa-brands fa-bitcoin"></i>
-                <a href="index.html">
-                  <img class="h-10 w-auto" src="./images/BitcoinLogo.svg" alt="Bitcoininfo">
-                </a>
-              </div>
-              
-              <!-- This button will be displayed on all screen sizes -->
-              <button id="loginButton" class="bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm sm:text-lg">
-                Login
-              </button>
-              
-              <!-- This button will be displayed on all screen sizes -->
-              <button id="registerButton" class="bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm sm:text-lg">
-                Register
-              </button>
-              
             
+                <!-- LOGIN BUTTON -->
+                <button id="loginButton" class="hidden sm:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm sm:text-lg">
+                  Login
+                </button>
+                
+                <!-- REGISTER BUTTON  -->
+                <button id="registerButton" class="hidden sm:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm sm:text-lg">
+                  Register
+                </button>
+            
+              
             </div>
         </div>
     </div>
@@ -137,7 +132,7 @@
            
              <!-- Searchfield -->
              <div class="">
-                <input type="text" class="p-1 rounded-md text-black custom-focus w-full" placeholder="Search...">
+                <input type="text" class="px-3 py-2 rounded-md text-black custom-focus w-full" placeholder="Search...">
             </div>
             <a href="index.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
             <a href="bitcoin-influencers.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Bitcoin-Influencers</a>
@@ -146,6 +141,17 @@
             <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Nyheter</a>
             <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Handla-Bitcoin</a>
             <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Om</a>
+              
+            <div class="flex flex-col mb-6">
+              <!-- LOGIN BUTTON -->
+              <button id="loginButton" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm sm:text-lg">
+                Login
+              </button>
+              <!-- REGISTER BUTTON  -->
+              <button id="registerButton" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm sm:text-lg">
+                Register
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -161,9 +167,10 @@
       
 
        <!-- Information cards -->
-       <div class="flex flex-wrap justify-center max-h-screen space-xy-52 mt-10">
+       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
         <!-- Card 1 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-1" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -180,7 +187,7 @@
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-2" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -197,7 +204,7 @@
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-3" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/unlimited supply.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -214,7 +221,7 @@
           </div>
         </div>
         <!-- Card 4 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-4" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -231,7 +238,7 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-5" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/dont-trust.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -248,7 +255,7 @@
           </div>
         </div>
         <!-- Card 6 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-6" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -265,7 +272,7 @@
           </div>
         </div>
         <!-- Card 7 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-7" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
@@ -282,7 +289,7 @@
           </div>
         </div>
         <!-- Card 8 -->
-        <div class="m-4 relative w-80 max-h-100">
+        <div class="mt-10 relative max-w-xs">
           <div id="card-2" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
