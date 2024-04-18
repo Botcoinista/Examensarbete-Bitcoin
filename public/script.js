@@ -64,3 +64,41 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
     }
   });
   
+
+// Show more text function
+function showMore(cardNumber) {
+  const text = document.getElementById(`text-${cardNumber}`);
+  text.classList.remove('hidden');
+}
+
+// Get all card elements
+const cards = document.querySelectorAll('.shadow-md');
+
+// Add click event listener to each card
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const imageSrc = card.querySelector('img').src;
+    const title = card.querySelector('h3').textContent;
+    const text = card.querySelector('p').textContent;
+    
+    // Set modal content
+    document.getElementById('modal-image').src = imageSrc;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-text').textContent = text;
+    
+    // Show modal
+    document.getElementById('modal').classList.remove('hidden');
+  });
+});
+
+// Close modal when clicking 'x' button
+document.getElementById('close-modal').addEventListener('click', () => {
+  document.getElementById('modal').classList.add('hidden');
+});
+
+// Close modal when clicking outside modal content
+document.getElementById('modal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal')) {
+    document.getElementById('modal').classList.add('hidden');
+  }
+});
