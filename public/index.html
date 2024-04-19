@@ -8,6 +8,12 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="stylesheet" href="./style.css">
+<style>
+  .custom-height {
+    height: 350px; /* Custom fixed height */
+  }
+
+</style>
 <title>Bitcoininfo</title>
 </head>
 <body>
@@ -167,22 +173,22 @@
       
 
        <!-- Information cards -->
-       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+       <div class="container mx-auto px-4">
+  <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
         <!-- Card 1 -->
         <div class="mt-10 relative max-w-xs">
           <div id="card-1" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class="rounded-md mb-4 w-72 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 1</h3>
+              <h3 class="text-lg font-semibold text-gray-800">1. Varför skapades Bitcoin</h3>
               <div class="text-gray-600">
                   <p id="text-1">
-                      Bitcoin är en digital valuta som skapades år 2009 av en person eller grupp som använde pseudonymen Satoshi Nakamoto. 
+                    Bitcoin lanserades i januari 2009 av en anonym skapare som använde pseudonymen Satoshi Nakamoto som svar på den globala finanskrisen. 
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 1 -->
-                  <span class="hidden-text hidden">Till skillnad från traditionella valutor, som euro eller dollar, är Bitcoin decentraliserad och finns inte fysiskt i form av sedlar eller mynt. Istället lagras och överförs Bitcoin elektroniskt via ett distribuerat nätverk av datorer över hela världen.</span>
+                  <span class="hidden-text hidden">Detta initiativ syftade till att skapa en ekonomisk infrastruktur oberoende av centralbanker och traditionella finansiella institutioner, vilka ansågs ha bidragit till den ekonomiska nedgången genom riskfyllda investeringar och bristande transparens. Bitcoin introducerades som ett alternativt finansiellt system som använder blockchain-teknologi för att möjliggöra säkra, transparenta och oberoende transaktioner. Genom att eliminera behovet av mellanhänder, hoppades Nakamoto minska de kostnader och den korruption som ofta är förknippad med traditionella finansiella tjänster. Dessutom syftade skapandet av Bitcoin till att återställa och stärka individens kontroll över sina egna ekonomiska resurser och erbjuda en stabil valuta fri från politiska och ekonomiska manipulationer.</span>
               </div>
           </div>
         </div>
@@ -192,15 +198,13 @@
               <div class="w-full">
                   <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 2</h3>
+              <h3 class="text-lg font-semibold text-gray-800">2. Decentralisering</h3>
               <div class="text-gray-600">
-                  <p id="text-2">
-                    En av de mest revolutionerande aspekterna av Bitcoin är dess decentraliserade natur. Det betyder att ingen enskild institution 
-                    </p>
+                  <p id="text-2">En av de mest revolutionerande aspekterna och hjärtat av Bitcoin är dess decentraliserade natur, vilket undviker central kontroll.</p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 2 -->
-                  <p class="hidden-text hidden">eller regering kontrollerar Bitcoin-nätverket. Istället sköts det av användarna själva genom en teknik som kallas blockchain, vilket gör det transparent och svårt att manipulera.
-                    Detta åstadkoms genom att vem som helst kan ifrom av bara några tusen kronor köpa utrustning till en så kallad "Bitcoin node" och därmed vara en del av nätverket genom att verifiera transaktioner och därmed bidra till att nätverket är säkert och pålitligt.
+                  <p class="hidden-text hidden">
+                    Genom att distribuera databehandlingen över ett nätverk av datorer eliminerar Bitcoin behovet av en central myndighet som kan manipulera eller kontrollera pengars värde. Det innebär att ingen enskild institution eller regering kan kontrollera Bitcoin-nätverket. Istället sköts det av användarna själva genom en teknik som kallas blockchain. Detta möjliggörs genom att vem som helst, för en relativt låg kostnad, kan köpa utrustning för att sätta upp en så kallad "Bitcoin node". Genom att delta i nätverket och verifiera transaktioner bidrar dessa noder till att hålla nätverket säkert och pålitligt.
                   </p>
               </div>
           </div>
@@ -209,16 +213,16 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-3" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/unlimited supply.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-unlimited-suply-fiat.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 3</h3>
+              <h3 class="text-lg font-semibold text-gray-800">3. Begränsad tillgång</h3>
               <div class="text-gray-600">
                   <p id="text-3">
-                    En annan viktig egenskap hos Bitcoin är dess begränsade tillgång. Till skillnad från traditionella valutor som kan tryckas i  
+                    Bitcoins begränsade tillgång är en grundläggande egenskap som skiljer den från traditionella valutor, som kan tryckas i oändlighet av centralbanker. 
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 3 -->
-                  <p class="hidden-text hidden">obegränsade mängder av centralbanker, är antalet Bitcoins som någonsin kommer att existera fastställt till 21 miljoner. Detta gör Bitcoin till en attraktiv tillgång för dem som söker skydd mot inflation. Detta är matematiskt programmerat i bitcoins kod och går i praktiken aldrig att ändra.</p>
+                  <p class="hidden-text hidden"> Denna fastställda gräns på 21 miljoner mynt är avsedd att förhindra inflation och efterlikna egenskaper hos ädelmetaller som guld. Denna knapphet har lett till att Bitcoin ibland kallas "digitalt guld", och är en stor anledning till dess attraktivitet som en långsiktig investering.</p>
               </div>
           </div>
         </div>
@@ -228,14 +232,14 @@
               <div class="w-full">
                   <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 4</h3>
+              <h3 class="text-lg font-semibold text-gray-800">4. Världens säkraste nätverk</h3>
               <div class="text-gray-600">
                   <p id="text-4">
-                    Bitcoin erbjuder en alternativ tillgång till traditionella fiatvalutor (statliga valutor) som i varierande grad är föremål för inflation och manipulering av centralbanker. 
+                    Bitcoins säkerhetssystem är robust, baserat på kryptografiska principer som gör det nästan omöjligt att hacka eller förfalska.
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 4 -->
-                  <p class="hidden-text hidden">Genom att använda en decentraliserad och transparent teknik som blockchain, kan Bitcoin erbjuda en säker och tillförlitlig metod för värdeförvaring och överföring.
+                  <p class="hidden-text hidden"> Varje Bitcoin-transaktion verifieras genom ett nätverk av noder som använder sig av proof-of-work, (det som kallas minig) vilket kräver att de som "gräver" efter bitcoin löser komplexa matematiska problem. Detta säkerställer inte bara säkerheten utan också nätverkets neutralitet och oberoende.
                   </p>
               </div>
           </div>
@@ -246,7 +250,7 @@
               <div class="w-full">
                   <img src="./images/DALL·E-trust no one.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 5</h3>
+              <h3 class="text-lg font-semibold text-gray-800">5. Eliminering av tillit</h3>
               <div class="text-gray-600">
                   <p id="text-5">
                     Med Bitcoin behöver du inte lita på en centralbank eller regering för att skydda din förmögenhet mot inflation eller politisk instabilitet. 
@@ -254,7 +258,7 @@
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 5 -->
                   <p class="hidden-text hidden">Istället kan du själv kontrollera dina tillgångar (vara din egen bank) och överföra dem över hela världen snabbt och kostnadseffektivt utan att behöva förlita dig på en tredje part som en bank eller betalningsleverantör, vilka kan censurera eller blockera dina transaktioner.  
-                    .</p>
+                    </p>
               </div>
           </div>
         </div>
@@ -264,14 +268,14 @@
               <div class="w-full">
                   <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 6</h3>
+              <h3 class="text-lg font-semibold text-gray-800">6. Eliminering av risk  </h3>
               <div class="text-gray-600">
                   <p id="text-6">
-                    Genom att använda Bitcoin kan du undvika de risker som är förknippade med traditionella valutor och finansiella 
+                    Genom att använda Bitcoin kan du undvika de risker som är förknippade med traditionella valutor och finansiella system
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 6 -->
-                  <p class="hidden-text hidden">system, som till exempel bankers konkurs eller statlig manipulation av valutakurser. Med bitcoin litar du på det som är skrivet i kod som ingen enskild kan ändra, i en vanlig valuta är du i händerna på enstaka individer som kan göra det som är bäst för deras egna eller politiska vinning. </p>
+                  <p class="hidden-text hidden">som till exempel bankers konkurs eller statlig manipulation av valutakurser. Med bitcoin litar du på det som är skrivet i kod som ingen enskild kan ändra, i en vanlig valuta är du i händerna på enstaka individer som kan göra det som är bäst för deras egna eller politiska vinning. </p>
               </div>
           </div>
         </div>
@@ -281,7 +285,7 @@
               <div class="w-full">
                   <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 7</h3>
+              <h3 class="text-lg font-semibold text-gray-800">7. En ljus framtid</h3>
               <div class="text-gray-600">
                   <p id="text-7"> Om Bitcoin skulle lyckas ta över som en dominerande global valuta, skulle det kunna innebära en framtid där människor </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
@@ -296,14 +300,14 @@
               <div class="w-full">
                   <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">Steg 8</h3>
+              <h3 class="text-lg font-semibold text-gray-800">8. Fix the money fix the world</h3>
               <div class="text-gray-600">
                   <p id="text-8">
-                    I slutändan är Bitcoin mer än bara en digital valuta; det är en innovativ teknologi som har potentialen att omforma hela det globala 
+                    I slutändan är bitcoin mer än bara en digital valuta; Bitcoin representerar en potentiell revolution för hur vi ser på och använder pengar. 
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 8 -->
-                  <p class="hidden-text hidden">finansiella systemet. Genom att erbjuda en decentraliserad, transparent och säker form av valuta och värdebevaring, kan Bitcoin erbjuda en alternativ till traditionella fiatvalutor och frigöra människor från centralbankers och regeringars kontroll över pengar.</p>
+                  <p class="hidden-text hidden">Genom sin förmåga att erbjuda snabba, säkra och billiga transaktioner utan behov av traditionella finansiella mellanhänder, utmanar bitcoin grunderna i det globala finansiella systemet. Det är en teknologi som inte bara är en ny innovation utan en revolution som erbjuder möjligheten till ekonomisk frihet och jämlikhet för alla, överallt.</p>
               </div>
           </div>
         </div>
