@@ -174,21 +174,22 @@
 
        <!-- Information cards -->
        <div class="container mx-auto px-4">
-  <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
         <!-- Card 1 -->
         <div class="mt-10 relative max-w-xs">
           <div id="card-1" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class="rounded-md mb-4 w-72 object-cover">
+                  <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class="rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">1. Varför skapades Bitcoin</h3>
               <div class="text-gray-600">
                   <p id="text-1">
                     Bitcoin lanserades i januari 2009 av en anonym skapare som använde pseudonymen Satoshi Nakamoto som svar på den globala finanskrisen. 
                     </p>
-                    <span class="text-blue-500 cursor-pointer">Visa mer...</span>
+                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
                   <!-- Hidden text for Card 1 -->
                   <span class="hidden-text hidden">Detta initiativ syftade till att skapa en ekonomisk infrastruktur oberoende av centralbanker och traditionella finansiella institutioner, vilka ansågs ha bidragit till den ekonomiska nedgången genom riskfyllda investeringar och bristande transparens. Bitcoin introducerades som ett alternativt finansiellt system som använder blockchain-teknologi för att möjliggöra säkra, transparenta och oberoende transaktioner. Genom att eliminera behovet av mellanhänder, hoppades Nakamoto minska de kostnader och den korruption som ofta är förknippad med traditionella finansiella tjänster. Dessutom syftade skapandet av Bitcoin till att återställa och stärka individens kontroll över sina egna ekonomiska resurser och erbjuda en stabil valuta fri från politiska och ekonomiska manipulationer.</span>
+                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
               </div>
           </div>
         </div>
@@ -196,7 +197,7 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-2" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">2. Decentralisering</h3>
               <div class="text-gray-600">
@@ -213,7 +214,7 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-3" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-unlimited-suply-fiat.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-unlimited-suply-fiat.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">3. Begränsad tillgång</h3>
               <div class="text-gray-600">
@@ -230,7 +231,7 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-4" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">4. Världens säkraste nätverk</h3>
               <div class="text-gray-600">
@@ -248,16 +249,16 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-5" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-trust no one.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-trust no one.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">5. Eliminering av tillit</h3>
+              <h3 class="text-lg font-semibold text-gray-800">5. Don't Trust, Verify</h3>
               <div class="text-gray-600">
                   <p id="text-5">
                     Med Bitcoin behöver du inte lita på en centralbank eller regering för att skydda din förmögenhet mot inflation eller politisk instabilitet. 
                     </p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 5 -->
-                  <p class="hidden-text hidden">Istället kan du själv kontrollera dina tillgångar (vara din egen bank) och överföra dem över hela världen snabbt och kostnadseffektivt utan att behöva förlita dig på en tredje part som en bank eller betalningsleverantör, vilka kan censurera eller blockera dina transaktioner.  
+                  <p class="hidden-text hidden">Istället kan du själv kontrollera dina tillgångar (vara din egen bank) och överföra dem över hela världen snabbt och kostnadseffektivt utan att behöva förlita dig på en tredje part som en bank eller betalningsleverantör, vilka kan censurera eller blockera dina transaktioner. Detta skapar en form av finansiell yttrandefrihet där pengar kan flyttas fritt utan rädsla för godtycklig inblandning. 
                     </p>
               </div>
           </div>
@@ -266,9 +267,9 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-6" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
-              <h3 class="text-lg font-semibold text-gray-800">6. Eliminering av risk  </h3>
+              <h3 class="text-lg font-semibold text-gray-800">6. Eliminering av risk</h3>
               <div class="text-gray-600">
                   <p id="text-6">
                     Genom att använda Bitcoin kan du undvika de risker som är förknippade med traditionella valutor och finansiella system
@@ -283,14 +284,14 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-7" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">7. En ljus framtid</h3>
               <div class="text-gray-600">
-                  <p id="text-7"> Om Bitcoin skulle lyckas ta över som en dominerande global valuta, skulle det kunna innebära en framtid där människor </p>
+                  <p id="text-7"> Om Bitcoin skulle lyckas ta över som en dominerande global valuta, skulle det kunna innebära en mer inkluderande framtid.</p>
                     <span class="text-blue-500 cursor-pointer">Visa mer...</span>
                   <!-- Hidden text for Card 7 -->
-                  <p class="hidden-text hidden">över hela världen har större kontroll över sina egna ekonomiska resurser, med möjlighet att spara och investera på ett rättvist och hållbart sätt. Detta skulle kunna skapa en mer jämlik och stabil global ekonomi och öka hoppet om en framtid där var och en är sin egen bank, fri från manipulation och kontroll från centraliserade myndigheter. En sådan framtid inte bara öppnar upp för ekonomisk autonomi utan också för en värld där varje individ kan skydda sina tillgångar mot inflation och ekonomisk osäkerhet, vilket ger en djupare känsla av trygghet och hopp.</p>
+                  <p class="hidden-text hidden">Där människor över hela världen har större kontroll över sina egna ekonomiska resurser, med möjlighet att spara och investera på ett rättvist och hållbart sätt. Detta skulle kunna skapa en mer jämlik och stabil global ekonomi och öka hoppet om en framtid där var och en är sin egen bank, fri från manipulation och kontroll från centraliserade myndigheter. En sådan framtid inte bara öppnar upp för ekonomisk autonomi utan också för en värld där varje individ kan skydda sina tillgångar mot inflation och ekonomisk osäkerhet, vilket ger en djupare känsla av trygghet och hopp.</p>
               </div>
           </div>
         </div>
@@ -298,7 +299,7 @@
         <div class="mt-10 relative max-w-xs">
           <div id="card-8" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
-                  <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-100 object-cover">
+                  <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
               </div>
               <h3 class="text-lg font-semibold text-gray-800">8. Fix the money fix the world</h3>
               <div class="text-gray-600">
@@ -320,7 +321,7 @@
       <div id="modal" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
         <div class="bg-white rounded-lg shadow-lg p-8 m-4 max-w-lg relative">
             <button id="close-modal" class="absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-            <img id="modal-image" src="" alt="Bitcoin Image" class="rounded-md mb-4 min-w-full h-100 object-cover">
+            <img id="modal-image" src="" alt="Bitcoin Image" class="rounded-md mb-4 min-w-full object-cover">
             <h3 id="modal-title" class="text-lg font-semibold text-gray-800 mb-2"></h3>
             <div class="text-gray-600">
               <span id="modal-text"></span>
@@ -372,6 +373,24 @@
                 document.getElementById('modal').classList.add('hidden');
             }
         });
+
+
+
+        // Toggle hidden text
+                document.addEventListener('DOMContentLoaded', function () {
+          const toggleButtons = document.querySelectorAll('.toggle-text');
+
+          toggleButtons.forEach(button => {
+            button.addEventListener('click', function () {
+              const card = this.closest('.card');
+              const hiddenText = card.querySelector('.hidden-text');
+              const isVisible = !hiddenText.classList.contains('hidden');
+              hiddenText.classList.toggle('hidden');
+              this.textContent = isVisible ? 'Visa mer...' : 'Visa mindre...';
+            });
+          });
+        });
+
     </script>
 </body>
 </html>
