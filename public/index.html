@@ -311,9 +311,9 @@
       </div>
 
       <!-- MODAL -->
-      <div id="modal" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
+      <div id="modal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
         <div class="bg-white rounded-lg shadow-lg p-8 m-4 max-w-lg relative">
-            <button id="close-modal" class="absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+            <button id="close-modal" class="text-black absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
             <img id="modal-image" src="" alt="Bitcoin Image" class="rounded-md mb-4 min-w-full object-cover">
             <h3 id="modal-title" class="text-lg font-semibold text-gray-800 mb-2"></h3>
             <div class="text-gray-600">
@@ -400,11 +400,9 @@
   });
 
 
-    
+   
 
    document.getElementById('current-year').textContent = new Date().getFullYear();
-      </script>
-
     </script>
 </body>
 </html>
