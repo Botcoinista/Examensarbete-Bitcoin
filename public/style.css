@@ -1,6 +1,26 @@
-body {
+/* body {
     background-color: rgb(63, 53, 53);
+} */
+body {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e, #f7931a); /* from deep blue to purple with a touch of Bitcoin orange */
+    color: #ffffff; /* White text for contrast */
 }
+
+
+nav {
+    background-color: #000000;
+    color: white;
+}
+
+/* nav {
+    background-color: #2F4F4F;
+    color: white;
+} */
+
+
+
+
+
 
 
 .custom-focus {
