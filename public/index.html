@@ -336,60 +336,60 @@
 
      
       <script>
-        // Get all card elements
-        const cards = document.querySelectorAll('.card');
+            // Get all card elements
+            document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.card');
+            const modal = document.getElementById('modal');
 
-        // Add click event listener to each card
+        // Function to show modal
+        function showModal(imageSrc, title, text, hiddenText) {
+            document.getElementById('modal-image').src = imageSrc;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-text').textContent = text;
+            document.getElementById('modal-hidden-text').textContent = hiddenText;
+            modal.classList.remove('hidden');
+        }
+
+        // Event listener for cards
         cards.forEach(card => {
             card.addEventListener('click', () => {
-                const imageSrc = card.querySelector('img').src;
-                const title = card.querySelector('h3').textContent;
-                const text = card.querySelector('p').textContent;
-                const hiddenText = card.querySelector('.hidden-text').textContent;
-       
+                const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-                // Check if the modal is already displayed
-                const modal = document.getElementById('modal');
+                if (screenWidth > 768) {  // Only show modal on larger screens
+                    const imageSrc = card.querySelector('img').src;
+                    const title = card.querySelector('h3').textContent;
+                    const text = card.querySelector('p').textContent;
+                    const hiddenText = card.querySelector('.hidden-text').textContent;
 
-                // Set modal content
-                document.getElementById('modal-image').src = imageSrc;
-                document.getElementById('modal-title').textContent = title;
-                document.getElementById('modal-text').textContent = text;
-                document.getElementById('modal-hidden-text').textContent = hiddenText;
-
-                // Show modal
-                modal.classList.remove('hidden');
+                    showModal(imageSrc, title, text, hiddenText);
+                }
             });
         });
 
-        // Close modal when clicking 'x' button
+        // Close modal
         document.getElementById('close-modal').addEventListener('click', () => {
-            document.getElementById('modal').classList.add('hidden');
+            modal.classList.add('hidden');
         });
 
-        // Close modal when clicking outside modal content
-        document.getElementById('modal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('modal')) {
-                document.getElementById('modal').classList.add('hidden');
+        // Close modal by clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
             }
         });
 
-
-
-        // Toggle hidden text
-                document.addEventListener('DOMContentLoaded', function () {
-          const toggleButtons = document.querySelectorAll('.toggle-text');
-
-          toggleButtons.forEach(button => {
+        // Toggle hidden text for small screens
+        const toggleButtons = document.querySelectorAll('.toggle-text');
+        toggleButtons.forEach(button => {
             button.addEventListener('click', function () {
-              const card = this.closest('.card');
-              const hiddenText = card.querySelector('.hidden-text');
-              const isVisible = !hiddenText.classList.contains('hidden');
-              hiddenText.classList.toggle('hidden');
-              this.textContent = isVisible ? 'Visa mer...' : 'Visa mindre...';
+                const hiddenText = this.closest('.card').querySelector('.hidden-text');
+                const isVisible = !hiddenText.classList.contains('hidden');
+                hiddenText.classList.toggle('hidden');
+                this.textContent = isVisible ? 'Visa mer...' : 'Visa mindre...';
             });
-          });
         });
+    });
+
 
     </script>
 </body>
