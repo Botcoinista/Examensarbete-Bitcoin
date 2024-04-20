@@ -36,31 +36,23 @@
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl sm:px-2">
           <div class="relative flex h-20 items-center justify-between">
-            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+            <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 
               <!-- Hamburger Menu -->
-              <button type="button" class="relative right-0 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
-                <!--
-                  Icon when menu is closed.
-      
-                  Menu open: "hidden", Menu closed: "block"
-                -->
-                <svg class="block h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+         <!-- Hamburger Menu Button -->
+            <button id="hamburger-btn" type="button" class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
+              <span class="sr-only">Open main menu</span>
+              <svg class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <!--
-                  Icon when menu is open.
-      
-                  Menu open: "block", Menu closed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              </svg>
+              <!-- Icon when menu is open -->
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              </svg>
+            </button>
             </div>
             <div class="flex flex-1 items-center sm:items-stretch sm:justify-start ml-2">
+              <!-- BITCOIN LOGO -->
               <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
                 <i class="fa-brands fa-bitcoin"></i>
                 <a href="index.html">
@@ -69,7 +61,7 @@
               </div>
 
               <!-- Navbar links -->
-              <div class="hidden sm:ml-8 sm:block">
+              <div class="hidden sm:ml-8 lg:block">
                 <div class="flex">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                   <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium" aria-current="page">Hem</a>
@@ -83,7 +75,7 @@
               </div>
             </div>
             <!-- Searchfield -->
-            <div class="hidden sm:block ml-8">
+            <div class="hidden lg:block ml-8">
                 <input type="text" class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus" placeholder="Search...">
             </div>
 
@@ -113,12 +105,12 @@
 
             
                 <!-- LOGIN BUTTON -->
-                <button id="loginButton" class="hidden sm:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500  font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg">
+                <button id="loginButton" class="hidden lg:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500  font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg">
                   Login
                 </button>
                 
                 <!-- REGISTER BUTTON  -->
-                <button id="registerButton" class="hidden sm:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg">
+                <button id="registerButton" class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg">
                   Register
                 </button>
             </div>
@@ -129,9 +121,9 @@
       
 
 
-        
+
         <!-- Mobile menu -->
-        <div class="sm:hidden" id="mobile-menu">
+        <div class="hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
            
              <!-- Searchfield -->
@@ -174,7 +166,7 @@
        <div class="container mx-auto">
   <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
         <!-- Card 1 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-1" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class="rounded-md mb-4 w-72 h-52 object-cover">
@@ -192,7 +184,7 @@
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-2" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -210,7 +202,7 @@
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-3" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-unlimited-suply-fiat.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -228,7 +220,7 @@
           </div>
         </div>
         <!-- Card 4 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-4" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -247,7 +239,7 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-5" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-trust no one.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -266,7 +258,7 @@
           </div>
         </div>
         <!-- Card 6 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-6" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -284,7 +276,7 @@
           </div>
         </div>
         <!-- Card 7 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-7" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -300,7 +292,7 @@
           </div>
         </div>
         <!-- Card 8 -->
-        <div class="mt-10 relative max-w-xs">
+        <div class="mt-10 relative max-w-xs mx-auto">
           <div id="card-8" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
               <div class="w-full">
                   <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
@@ -399,6 +391,22 @@
             });
         });
     });
+
+   
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      // Optionally toggle icons for open and close
+      this.querySelector('svg.block').classList.toggle('hidden');
+      this.querySelector('svg.hidden').classList.toggle('hidden');
+    });
+  });
+
+
+    
 
    document.getElementById('current-year').textContent = new Date().getFullYear();
       </script>
