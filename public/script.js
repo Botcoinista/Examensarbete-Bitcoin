@@ -31,7 +31,6 @@
 
 
 // Registration
-
 document
   .getElementById("registrationForm")
   .addEventListener("submit", async function (event) {
@@ -53,21 +52,82 @@ document
       });
       console.log("client side:", response.status);
 
+    
       if (response.ok) {
-        // Registration successful, display success message or redirect to another page
-        console.log("Registration successful");
-      } else {
-        // Registration failed, display error message
+        // If registration is successful, modify the modal content
+        const modalTitle = document.querySelector('#registrationModal h2');
+        const formElements = document.querySelectorAll('#registrationModal form > div');
+        const submitButton = document.querySelector('#registrationModal button[type="submit"]');
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Clear previous errors
+        errorMessage.textContent = '';
+        errorMessage.classList.add('hidden');  
+
+        // Change the modal title
+        modalTitle.textContent = "Registreringen Lyckades!";
+
+        // Hide form elements and button
+        formElements.forEach(el => el.style.display = 'none');
+        submitButton.style.display = 'none';
+
+        // Optional: Show a different message or further instructions
+        const successMessage = document.createElement('p');
+        successMessage.textContent = "Du kommer strax vidare...";
+        document.querySelector('#registrationModal form').appendChild(successMessage);
+
+        // Redirect after 1.5 seconds to login modal or another page
+        setTimeout(() => {
+            // Assuming loginModal is an existing element you want to show
+            document.getElementById('loginModal').classList.remove('hidden');
+            // Optionally close the registration modal if needed
+            document.getElementById('registrationModal').classList.add('hidden');
+        }, 1500);
+    } else {
+      const data = await response.json(); 
+      errorMessage.textContent = data.message || "Registration failed, please try again.";
+      errorMessage.classList.remove('hidden');
         console.error("Registration failed");
-      }
-    } catch (error) {
-      // Handle network errors or other exceptions
-      console.error("Error:", error);
     }
-  });
+} catch (error) {
+    console.error("Error:", error);
+}
+});
 
 
 
+
+
+//   if (response.ok) {
+//     // Registration successful, display success message or redirect to another page
+//     // this.textContent = "Registration successful";
+//     registrationModal.innerHTML = "<h1>Registrering lyckades!</h1>";
+//     setTimeout(() => {
+//       console.log("Registration successful");
+//       registrationModal.classList.add('hidden'); // Hide the registration modal
+//       showLoginModal(); // Show the login modal
+//   }, 10500);
+//   } else {
+//     // Registration failed, display error message
+//     console.error("Registration failed");
+//     registrationModal.innerHTML = "<h1>Registrering misslyckades!</h1>";
+//     setTimeout(() => {
+//       registrationModal.classList.add('hidden');
+//   }, 1500);
+//   }
+// } catch (error) {
+//   // Handle network errors or other exceptions
+//     console.error("Error:", error);
+//     registrationModal.innerHTML = '<h1>Registrering Misslyckades! Försök igen.</h1>';
+//     setTimeout(() => {
+//         registrationModal.classList.add('hidden');
+//     }, 1500);
+// }
+// });
+
+
+
+  // REGISTRATION MODAL
   document.addEventListener('DOMContentLoaded', function() {
     const registerBtnDesktop = document.getElementById('registerButton');
     const registerBtnMobile = document.getElementById('registerButtonMobile');
@@ -87,30 +147,28 @@ document
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const loginBtnDesktop = document.getElementById('loginButton');
-    const loginBtnMobile = document.getElementById('loginButtonMobile');
-    const loginModal = document.getElementById('loginModal');
-    const closeBtn = document.getElementById('close-loginModal');
+// LOGIN MODAL
+//   document.addEventListener('DOMContentLoaded', function() {
+//     const loginBtnDesktop = document.getElementById('loginButton');
+//     const loginBtnMobile = document.getElementById('loginButtonMobile');
+//     const loginModal = document.getElementById('loginModal');
+//     const closeBtn = document.getElementById('close-loginModal');
 
-    loginBtnDesktop.addEventListener('click', function() {
-        loginModal.classList.remove('hidden');
-    });
+//     loginBtnDesktop.addEventListener('click', function() {
+//         loginModal.classList.remove('hidden');
+//     });
 
-    loginBtnMobile.addEventListener('click', function() {
-      loginModal.classList.remove('hidden');
-  });
+//     loginBtnMobile.addEventListener('click', function() {
+//       loginModal.classList.remove('hidden');
+//   });
 
-    closeBtn.addEventListener('click', function() {
-        loginModal.classList.add('hidden');
-    });
-});
-
-
-
+//     closeBtn.addEventListener('click', function() {
+//         loginModal.classList.add('hidden');
+//     });
+// });
 
 
-// Get all card elements
+// GET ALL CARD ELEMENTS
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const modal = document.getElementById("modal");
