@@ -29,7 +29,9 @@
 //         });
 //     })
 
+
 // Registration
+
 document
   .getElementById("registrationForm")
   .addEventListener("submit", async function (event) {
@@ -63,6 +65,50 @@ document
       console.error("Error:", error);
     }
   });
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const registerBtnDesktop = document.getElementById('registerButton');
+    const registerBtnMobile = document.getElementById('registerButtonMobile');
+    const registrationModal = document.getElementById('registrationModal');
+    const closeBtn = document.getElementById('close-registrationModal');
+
+    registerBtnDesktop.addEventListener('click', function() {
+        registrationModal.classList.remove('hidden');
+    });
+
+    registerBtnMobile.addEventListener('click', function() {
+      registrationModal.classList.remove('hidden');
+  });
+
+    closeBtn.addEventListener('click', function() {
+        registrationModal.classList.add('hidden');
+    });
+});
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginBtnDesktop = document.getElementById('loginButton');
+    const loginBtnMobile = document.getElementById('loginButtonMobile');
+    const loginModal = document.getElementById('loginModal');
+    const closeBtn = document.getElementById('close-loginModal');
+
+    loginBtnDesktop.addEventListener('click', function() {
+        loginModal.classList.remove('hidden');
+    });
+
+    loginBtnMobile.addEventListener('click', function() {
+      loginModal.classList.remove('hidden');
+  });
+
+    closeBtn.addEventListener('click', function() {
+        loginModal.classList.add('hidden');
+    });
+});
+
+
+
+
 
 // Get all card elements
 document.addEventListener("DOMContentLoaded", function () {
@@ -135,3 +181,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
+
+

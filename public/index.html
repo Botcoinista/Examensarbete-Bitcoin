@@ -140,11 +140,11 @@
               
             <div class="flex flex-col mb-6">
               <!-- LOGIN BUTTON -->
-              <button id="loginButton" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
+              <button id="loginButtonMobile" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
                 Login
               </button>
               <!-- REGISTER BUTTON  -->
-              <button id="registerButton" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
+              <button id="registerButtonMobile" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
                 Register
               </button>
             </div>
@@ -324,33 +324,89 @@
             </div>
         </div>
     </div>
-  </div>
+       </div>
 
-    <!-- FOOTER -->
-    <footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
-      <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
-    </footer>
+<!-- FOOTER -->
+<footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
+  <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
+</footer>
 
-     <!-- Register Form -->
- <div class="hidden flex justify-center items-center h-screen text-white ">
-  <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-6 max-w-xl py-8 px-6 w-full bg-slate-600">
-    <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
-    <form class="space-y-16" id="registrationForm">
-        <div>
+<!-- REGISTER FORM-->
+<div id="registrationModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
+    <div class="flex justify-center items-center h-screen text-white w-full">
+      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
+        <button id="close-registrationModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+        <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
+        <form class="space-y-8" id="registrationForm">
+          <div>
             <label for="email" class="block font-medium">Email*</label>
             <input type="email" id="register-email" name="email" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="password" class="block font-medium">Lösenord*</label>
+            <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="username" class="block font-medium">Användarnamn</label>
+            <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
+      </div>
+  </div>
+</div>
+
+
+<!-- LOGIN FORM -->
+<div id="loginModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 ">
+  <div class="flex justify-center items-center h-screen text-white w-full">
+    <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
+      <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+      <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+      <form class="space-y-8" id="loginForm">
+        <div>
+          <label for="email" class="block font-medium">Email*</label>
+          <input type="email" id="login-email" name="email" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="password" class="block font-medium">Lösenord*</label>
+          <input type="password" id="login-password" name="password" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="username" class="block font-medium">Användarnamn</label>
+          <input type="text" id="login-username" name="username" class="mb-8 w-full py-2 px-4 rounded-lg  text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+          <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
+    </div>
+</div>
+
+
+
+
+
+<!-- 
+<div class="flex justify-center items-center h-screen ">
+  <div class="rounded-lg overflow-hidden shadow-lg mx-6 max-w-xl bg-white py-8 px-6 w-full">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <form class="space-y-16" id="loginForm">
+        <div>
+            <label for="email" class="block font-medium">Email*</label>
+            <input type="email" id="login-email" name="email" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
         </div>
         <div>
             <label for="password" class="block font-medium">Lösenord*</label>
-            <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+            <input type="password" id="login-password" name="password" required class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
         </div>
         <div>
             <label for="username" class="block font-medium">Användarnamn</label>
-            <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg  text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+            <input type="text" id="login-username" name="username" class="w-full py-2 px-4 rounded-lg border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
         </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
+        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
+    </form>
 </div>
-</div>
+</div> -->
+
+
+
      
 
 <script src="script.js"></script>

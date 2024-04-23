@@ -4,6 +4,8 @@ Run (node generateSecrets.js) in the terminal to generate the secrets and write 
 Make sure to be in the correct directory when running the command backend/(secrets-management).
 */
 
+* To connect to the database you need to run the command: npm run dev in the backend folder!
+
 
 # Hello
 
