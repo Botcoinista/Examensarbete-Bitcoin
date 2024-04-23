@@ -97,36 +97,6 @@ document
 
 
 
-
-//   if (response.ok) {
-//     // Registration successful, display success message or redirect to another page
-//     // this.textContent = "Registration successful";
-//     registrationModal.innerHTML = "<h1>Registrering lyckades!</h1>";
-//     setTimeout(() => {
-//       console.log("Registration successful");
-//       registrationModal.classList.add('hidden'); // Hide the registration modal
-//       showLoginModal(); // Show the login modal
-//   }, 10500);
-//   } else {
-//     // Registration failed, display error message
-//     console.error("Registration failed");
-//     registrationModal.innerHTML = "<h1>Registrering misslyckades!</h1>";
-//     setTimeout(() => {
-//       registrationModal.classList.add('hidden');
-//   }, 1500);
-//   }
-// } catch (error) {
-//   // Handle network errors or other exceptions
-//     console.error("Error:", error);
-//     registrationModal.innerHTML = '<h1>Registrering Misslyckades! Försök igen.</h1>';
-//     setTimeout(() => {
-//         registrationModal.classList.add('hidden');
-//     }, 1500);
-// }
-// });
-
-
-
   // REGISTRATION MODAL
   document.addEventListener('DOMContentLoaded', function() {
     const registerBtnDesktop = document.getElementById('registerButton');
