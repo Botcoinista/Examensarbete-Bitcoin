@@ -58,7 +58,7 @@ router.post("/register", async (req, res) => {
     console.log("after save", newUser)
     // Send a success response
     res.status(200).json({
-      message: "User created successfully! 🥳",
+      message: "Registreringen lyckades! 🥳",
       type: "success",
     });
   } catch (error) {

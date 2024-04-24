@@ -36,12 +36,13 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    // Collect form data
+    // Clear any previous error messages
+    clearErrorMessage();
+
     const email = document.getElementById("register-email").value;
     const password = document.getElementById("register-password").value;
     const username = document.getElementById("register-username").value;
 
-    // Send HTTP request to backend
     try {
       const response = await fetch("http://localhost:9999/auth/register", {
         method: "POST",
@@ -50,49 +51,83 @@ document
         },
         body: JSON.stringify({ email, password, username }),
       });
-      console.log("client side:", response.status);
 
-    
       if (response.ok) {
-        // If registration is successful, modify the modal content
-        const modalTitle = document.querySelector('#registrationModal h2');
-        const formElements = document.querySelectorAll('#registrationModal form > div');
-        const submitButton = document.querySelector('#registrationModal button[type="submit"]');
-        const errorMessage = document.getElementById("errorMessage");
-
-        // Clear previous errors
-        errorMessage.textContent = '';
-        errorMessage.classList.add('hidden');  
-
-        // Change the modal title
-        modalTitle.textContent = "Registreringen Lyckades!";
-
-        // Hide form elements and button
-        formElements.forEach(el => el.style.display = 'none');
-        submitButton.style.display = 'none';
-
-        // Optional: Show a different message or further instructions
-        const successMessage = document.createElement('p');
-        successMessage.textContent = "Du kommer strax vidare...";
-        document.querySelector('#registrationModal form').appendChild(successMessage);
-
-        // Redirect after 1.5 seconds to login modal or another page
+        const data = await response.json();
+        showSuccessMessage(data.message ); // Show success message from the server
         setTimeout(() => {
-            // Assuming loginModal is an existing element you want to show
-            document.getElementById('loginModal').classList.remove('hidden');
-            // Optionally close the registration modal if needed
-            document.getElementById('registrationModal').classList.add('hidden');
+          hideModal(); 
+          resetModal();
+          showLoginForm();  // Show the login form
+          clearFormFields();
         }, 1500);
-    } else {
-      const data = await response.json(); 
-      errorMessage.textContent = data.message || "Registration failed, please try again.";
-      errorMessage.classList.remove('hidden');
-        console.error("Registration failed");
+      } else {
+        const data = await response.json(); // Show error message from the server
+        showError(data.message);
+      }
+    } catch (error) {
+      showError("Ett oväntat fel uppstod, vänligen försök igen.");
     }
-} catch (error) {
-    console.error("Error:", error);
+  });
+
+ function showSuccessMessage(message) {
+  const successMessage = document.getElementById("successMessage");
+  successMessage.textContent = message
+  successMessage.classList.remove('hidden');
 }
+
+function showError(message) {
+  const errorMessage = document.getElementById("errorMessage");
+  errorMessage.textContent = message;
+  errorMessage.classList.remove('hidden');
+}
+
+function hideModal() {
+  const modal = document.getElementById('registrationModal');
+  modal.classList.add('hidden');
+}
+
+function showLoginForm() {
+  const loginModal = document.getElementById('loginModal');
+  loginModal.classList.remove('hidden');
+}
+
+
+function clearErrorMessage() {
+  const errorMessage = document.getElementById("errorMessage");
+  errorMessage.textContent = '';
+  errorMessage.classList.add('hidden');
+}
+
+document.getElementById('close-registrationModal').addEventListener('click', function() {
+  resetModal();
 });
+
+function resetModal() {
+  const form = document.querySelector('#registrationModal form');
+  const successMessage = document.getElementById("successMessage");
+  form.classList.remove('hidden');
+  successMessage.classList.add('hidden');
+  clearFormFields();
+}
+
+function clearFormFields() {
+  document.getElementById('register-email').value = '';
+  document.getElementById('register-password').value = '';
+  document.getElementById('register-username').value = '';
+}
+
+// function closeErrorMessage() {
+//   const errorMessage = document.getElementById("errorMessage");
+//   errorMessage.classList.add('hidden');
+// }
+
+close-registrationModal.addEventListener('click', function() {
+  clearErrorMessage();
+});
+
+
+
 
 
 
@@ -118,24 +153,34 @@ document
 });
 
 // LOGIN MODAL
-//   document.addEventListener('DOMContentLoaded', function() {
-//     const loginBtnDesktop = document.getElementById('loginButton');
-//     const loginBtnMobile = document.getElementById('loginButtonMobile');
-//     const loginModal = document.getElementById('loginModal');
-//     const closeBtn = document.getElementById('close-loginModal');
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginBtnDesktop = document.getElementById('loginButton');
+    const loginBtnMobile = document.getElementById('loginButtonMobile');
+    const loginModal = document.getElementById('loginModal');
+    const closeBtn = document.getElementById('close-loginModal');
 
-//     loginBtnDesktop.addEventListener('click', function() {
-//         loginModal.classList.remove('hidden');
-//     });
+    loginBtnDesktop.addEventListener('click', function() {
+        loginModal.classList.remove('hidden');
+    });
 
-//     loginBtnMobile.addEventListener('click', function() {
-//       loginModal.classList.remove('hidden');
-//   });
+    loginBtnMobile.addEventListener('click', function() {
+      loginModal.classList.remove('hidden');
+  });
 
-//     closeBtn.addEventListener('click', function() {
-//         loginModal.classList.add('hidden');
-//     });
-// });
+    closeBtn.addEventListener('click', function() {
+        loginModal.classList.add('hidden');
+    });
+});
+
+
+
+
+
+
+
+
+
+
 
 
 // GET ALL CARD ELEMENTS
