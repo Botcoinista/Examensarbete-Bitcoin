@@ -361,30 +361,67 @@
 
 <!-- LOGIN FORM -->
 <div id="loginModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-  <div class="flex justify-center items-center h-screen text-white w-full">
-    <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
-      <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-      <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
-      <form class="space-y-8" id="loginForm">
-        <!-- <div>
-          <label for="email" class="block font-medium">Email*</label>
-          <input type="email" id="login-email" name="email" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div>
-        <div>
-          <label for="password" class="block font-medium">Lösenord*</label>
-          <input type="password" id="login-password" name="password" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div>
-        <div>
-          <label for="username" class="block font-medium">Användarnamn</label>
-          <input type="text" id="login-username" name="username" class="mb-8 w-full py-2 px-4 rounded-lg  text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div> -->
-          <button id="loginButton-form" type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
+    <div class="flex justify-center items-center h-screen text-white w-full">
+      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
+        <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+        <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+        <form class="space-y-8" id="loginForm">
+          <div>
+            <label for="email" class="block font-medium">Email*</label>
+            <input type="email" id="login-email" name="email" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="password" class="block font-medium">Lösenord*</label>
+            <input type="password" id="login-password" name="password" required class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+            <button id="loginButton-form" type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
+
+            
+            <span id="errorMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
+            <span id="successMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
+            <p id="registerLink" class="text-blue-200 cursor-pointer">Registrera</p>
+      </div>
     </div>
+</div>
+
+ <!-- Registration Form -->
+ <!-- <div>
+  <h2>Register User</h2>
+  <form id="registrationForm">
+      <div>
+          <label for="register-email">Email*</label>
+          <input type="email" id="register-email" name="email" required>
+      </div>
+      <div>
+          <label for="register-password">Password*</label>
+          <input type="password" id="register-password" name="password" required>
+      </div>
+      <div>
+          <label for="register-username">Username</label>
+          <input type="text" id="register-username" name="username">
+      </div>
+      <button type="submit">Register</button>
+  </form>
+  <span id="registrationMessage" style="color: red;"></span>
 </div>
 
 
 
-
+<div>
+  <h2>Login</h2>
+  <form id="loginForm">
+      <div>
+          <label for="login-email">Email*</label>
+          <input type="email" id="login-email" name="email" required>
+      </div>
+      <div>
+          <label for="login-password">Password*</label>
+          <input type="password" id="login-password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+  </form>
+  <span id="loginMessage" style="color: red;"></span>
+</div> -->
 
      
 

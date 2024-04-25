@@ -29,8 +29,8 @@
 //         });
 //     })
 
-
 // Registration
+
 document
   .getElementById("registrationForm")
   .addEventListener("submit", async function (event) {
@@ -54,15 +54,17 @@ document
 
       if (response.ok) {
         const data = await response.json();
-        showSuccessMessage(data.message ); // Show success message from the server
+        showSuccessMessage(data.message); // Show success message from the server
+        console.log(data.message)
         setTimeout(() => {
-          hideModal(); 
+          hideModal();
           resetModal();
-          showLoginForm();  // Show the login form
+          showLoginForm(); // Show login form after successful registration
           clearFormFields();
         }, 1500);
       } else {
         const data = await response.json(); // Show error message from the server
+        console.log(data.message)
         showError(data.message);
       }
     } catch (error) {
@@ -70,71 +72,119 @@ document
     }
   });
 
- function showSuccessMessage(message) {
+function showSuccessMessage(message) {
   const successMessage = document.getElementById("successMessage");
-  successMessage.textContent = message
-  successMessage.classList.remove('hidden');
+  successMessage.textContent = message;
+  successMessage.classList.remove("hidden");
 }
 
 function showError(message) {
   const errorMessage = document.getElementById("errorMessage");
   errorMessage.textContent = message;
-  errorMessage.classList.remove('hidden');
+  errorMessage.classList.remove("hidden");
 }
 
 function hideModal() {
-  const modal = document.getElementById('registrationModal');
-  modal.classList.add('hidden');
+  const modal = document.getElementById("registrationModal");
+  modal.classList.add("hidden");
 }
 
 function showLoginForm() {
-  const loginModal = document.getElementById('loginModal');
-  loginModal.classList.remove('hidden');
+  const loginModal = document.getElementById("loginModal");
+  loginModal.classList.remove("hidden");
 }
-
 
 function clearErrorMessage() {
   const errorMessage = document.getElementById("errorMessage");
-  errorMessage.textContent = '';
-  errorMessage.classList.add('hidden');
+  errorMessage.textContent = "";
+  errorMessage.classList.add("hidden");
 }
 
-close-registrationModal.addEventListener('click', function() {
-  clearErrorMessage();
-});
+close -
+  registrationModal.addEventListener("click", function () {
+    clearErrorMessage();
+  });
 
-document.getElementById('close-registrationModal').addEventListener('click', function() {
-  resetModal();
-});
+document
+  .getElementById("close-registrationModal")
+  .addEventListener("click", function () {
+    resetModal();
+  });
 
 function resetModal() {
-  const form = document.querySelector('#registrationModal form');
+  const form = document.querySelector("#registrationModal form");
   const successMessage = document.getElementById("successMessage");
-  form.classList.remove('hidden');
-  successMessage.classList.add('hidden');
+  form.classList.remove("hidden");
+  successMessage.classList.add("hidden");
   clearFormFields();
 }
 
 function clearFormFields() {
-  document.getElementById('register-email').value = '';
-  document.getElementById('register-password').value = '';
-  document.getElementById('register-username').value = '';
+  document.getElementById("register-email").value = "";
+  document.getElementById("register-password").value = "";
+  document.getElementById("register-username").value = "";
 }
 
-document.getElementById('loginLink').addEventListener('click', function() {
+document.getElementById("loginLink").addEventListener("click", function () {
   hideModal();
   showLoginForm();
 });
 
+// REGISTRATION MODAL
+document.addEventListener("DOMContentLoaded", function () {
+  const registerBtnDesktop = document.getElementById("registerButton");
+  const registerBtnMobile = document.getElementById("registerButtonMobile");
+  const registrationModal = document.getElementById("registrationModal");
+  const closeBtn = document.getElementById("close-registrationModal");
+
+  registerBtnDesktop.addEventListener("click", function () {
+    registrationModal.classList.remove("hidden");
+  });
+
+  registerBtnMobile.addEventListener("click", function () {
+    registrationModal.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    registrationModal.classList.add("hidden");
+  });
+});
+
+
+
+
+
 // LOGIN
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Elements related to login modal
+  const loginBtnDesktop = document.getElementById("loginButton");
+  const loginBtnMobile = document.getElementById("loginButtonMobile");
+  const loginModal = document.getElementById("loginModal");
+  const closeBtn = document.getElementById("close-loginModal");
+
+  // Handle showing the login modal for both desktop and mobile buttons
+  loginBtnDesktop.addEventListener("click", function () {
+    loginModal.classList.remove("hidden");
+  });
+
+  loginBtnMobile.addEventListener("click", function () {
+    loginModal.classList.remove("hidden");
+  });
+
+  // Handle closing the login modal
+  closeBtn.addEventListener("click", function () {
+    loginModal.classList.add("hidden");
+  });
+
+  // Login form processing
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
-    loginForm.addEventListener("submit", async function(event) {
+    loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
-      const errorDiv = document.getElementById("login-error"); // Ensure this ID exists for displaying errors.
+      const errorMessage = document.getElementById("errorMessageLogin");
+      const successMessage = document.getElementById("successMessageLogin");
 
       try {
         const response = await fetch("http://localhost:9999/auth/login", {
@@ -142,87 +192,102 @@ document.addEventListener('DOMContentLoaded', function() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, password })
+          body: JSON.stringify({ email, password }),
         });
 
         const data = await response.json();
         if (response.ok) {
-          alert("Login Successful");
-          // Handle successful login, e.g., redirect or change UI state
+          successMessage.textContent = data.message;
+          successMessage.style.display = "block";
+          setTimeout(() => {
+            window.location.href = "/public/om"; // Redirect to profile page
+          }, 5000);
         } else {
-          // Display the error message from the server in the modal
-          errorDiv.textContent = data.message;
-          errorDiv.style.display = 'block'; // Make sure the error div is visible
+          errorMessage.textContent = data.message;
+          errorMessage.style.display = "block";
         }
       } catch (error) {
-        // Handle network errors or other unexpected issues
-        errorDiv.textContent = "Server error or network issue. Please try again later.";
-        errorDiv.style.display = 'block';
+        errorMessage.textContent =
+          "Ett oväntat fel uppstod, vänligen försök igen.";
+        errorMessage.style.display = "block";
       }
     });
   }
 
   // Optionally, handle closing the modal
-  const closeModalBtn = document.getElementById('close-loginModal');
+  const closeModalBtn = document.getElementById("close-loginModal");
   if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', function() {
-      document.getElementById('loginModal').style.display = 'none';
+    closeModalBtn.addEventListener("click", function () {
+      document.getElementById("loginModal").classList.add("hidden");
     });
   }
 });
 
 
-
-
-
-
-
-
-  // REGISTRATION MODAL
-  document.addEventListener('DOMContentLoaded', function() {
-    const registerBtnDesktop = document.getElementById('registerButton');
-    const registerBtnMobile = document.getElementById('registerButtonMobile');
-    const registrationModal = document.getElementById('registrationModal');
-    const closeBtn = document.getElementById('close-registrationModal');
-
-    registerBtnDesktop.addEventListener('click', function() {
-        registrationModal.classList.remove('hidden');
-    });
-
-    registerBtnMobile.addEventListener('click', function() {
-      registrationModal.classList.remove('hidden');
-  });
-
-    closeBtn.addEventListener('click', function() {
-        registrationModal.classList.add('hidden');
-    });
-});
-
 // LOGIN MODAL
-  document.addEventListener('DOMContentLoaded', function() {
-    const loginBtnDesktop = document.getElementById('loginButton');
-    const loginBtnMobile = document.getElementById('loginButtonMobile');
-    const loginModal = document.getElementById('loginModal');
-    const closeBtn = document.getElementById('close-loginModal');
+document.addEventListener("DOMContentLoaded", function () {
+  const loginBtnDesktop = document.getElementById("loginButton");
+  const loginBtnMobile = document.getElementById("loginButtonMobile");
+  const loginModal = document.getElementById("loginModal");
+  const closeBtn = document.getElementById("close-loginModal");
 
-    loginBtnDesktop.addEventListener('click', function() {
-        loginModal.classList.remove('hidden');
-    });
-
-    loginBtnMobile.addEventListener('click', function() {
-      loginModal.classList.remove('hidden');
+  loginBtnDesktop.addEventListener("click", function () {
+    loginModal.classList.remove("hidden");
   });
 
-    closeBtn.addEventListener('click', function() {
-        loginModal.classList.add('hidden');
-    });
+  loginBtnMobile.addEventListener("click", function () {
+    loginModal.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    loginModal.classList.add("hidden");
+  });
 });
 
 
+// ALTERNATIVE LOGIN AND REGISTRATION
+
+// document.getElementById('registrationForm').addEventListener('submit', function(event) {
+//   event.preventDefault();
+//   const email = document.getElementById('register-email').value;
+//   const password = document.getElementById('register-password').value;
+//   const username = document.getElementById('register-username').value;
+
+//   fetch('http://localhost:9999/auth/register', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ email, password, username })
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//       document.getElementById('registrationMessage').textContent = data.message || 'Registered successfully!';
+//   })
+//   .catch(error => {
+//       document.getElementById('registrationMessage').textContent = 'Failed to register!';
+//   });
+// });
 
 
 
 
+// document.getElementById('loginForm').addEventListener('submit', function(event) {
+//   event.preventDefault();
+//   const email = document.getElementById('login-email').value;
+//   const password = document.getElementById('login-password').value;
+
+//   fetch('http://localhost:9999/auth/login', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ email, password })
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//       document.getElementById('loginMessage').textContent = data.message;
+//   })
+//   .catch(error => {
+//       document.getElementById('loginMessage').textContent = 'Failed to login!';
+//   });
+// });
 
 
 
@@ -296,6 +361,5 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Set current year in footer
 document.getElementById("current-year").textContent = new Date().getFullYear();
-
-

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Registration and Login Forms</title>
+</head>
+<body>
+    <!-- Registration Form -->
+    <div>
+        <h2>Register User</h2>
+        <form id="registrationForm">
+            <div>
+                <label for="register-email">Email*</label>
+                <input type="email" id="register-email" name="email" required>
+            </div>
+            <div>
+                <label for="register-password">Password*</label>
+                <input type="password" id="register-password" name="password" required>
+            </div>
+            <div>
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" name="username">
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <span id="registrationMessage" style="color: red;"></span>
+    </div>
+
+    <!-- Login Form -->
+    <div>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="login-email">Email*</label>
+                <input type="email" id="login-email" name="email" required>
+            </div>
+            <div>
+                <label for="login-password">Password*</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <span id="loginMessage" style="color: red;"></span>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const username = document.getElementById('register-username').value;
+
+            fetch('http://localhost:9999/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, username })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('registrationMessage').textContent = data.message || 'Registered successfully!';
+            })
+            .catch(error => {
+                document.getElementById('registrationMessage').textContent = 'Failed to register!';
+            });
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            fetch('http://localhost:9999/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loginMessage').textContent = data.message;
+            })
+            .catch(error => {
+                document.getElementById('loginMessage').textContent = 'Failed to login!';
+            });
+        });
+    </script>
+</body>
+</html>
