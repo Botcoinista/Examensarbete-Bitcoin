@@ -30,7 +30,6 @@
 //     })
 
 // Registration
-
 document
   .getElementById("registrationForm")
   .addEventListener("submit", async function (event) {
@@ -156,11 +155,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // LOGIN
 document.addEventListener("DOMContentLoaded", function () {
-  // Elements related to login modal
   const loginBtnDesktop = document.getElementById("loginButton");
   const loginBtnMobile = document.getElementById("loginButtonMobile");
   const loginModal = document.getElementById("loginModal");
   const closeBtn = document.getElementById("close-loginModal");
+  const loginForm = document.getElementById("loginForm");
+  const loginButton = document.getElementById("loginButton");
 
   // Handle showing the login modal for both desktop and mobile buttons
   loginBtnDesktop.addEventListener("click", function () {
@@ -177,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Login form processing
-  const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", async function (event) {
       event.preventDefault();
@@ -197,11 +196,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const data = await response.json();
         if (response.ok) {
+             // Change login button to log out
+             loginButton.textContent = 'Log out';
+             loginButton.onclick = function() {
+               logOut();
+             };
           successMessage.textContent = data.message;
           successMessage.style.display = "block";
           setTimeout(() => {
-            window.location.href = "/public/om"; // Redirect to profile page
-          }, 5000);
+            window.location.href = "http://127.0.0.1:5502/public/index.html"
+          }, 1500);
         } else {
           errorMessage.textContent = data.message;
           errorMessage.style.display = "block";
@@ -213,14 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
 
-  // Optionally, handle closing the modal
-  const closeModalBtn = document.getElementById("close-loginModal");
-  if (closeModalBtn) {
-    closeModalBtn.addEventListener("click", function () {
-      document.getElementById("loginModal").classList.add("hidden");
-    });
-  }
+const registerLink = document.getElementById("registerLink");
+registerLink.addEventListener("click", function () {
+  document.getElementById("loginModal").classList.add("hidden");
+  document.getElementById("registrationModal").classList.remove("hidden");
 });
 
 
@@ -244,50 +246,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// LOGOUT FUNCTION
+function logOut() {
+  // Perform logout operations
+  console.log("Logging out...");
+  // Reset the login button to original state
+  loginButton.textContent = 'Login';
+  loginButton.onclick = function() {
+    document.getElementById("loginModal").classList.toggle("hidden");
+  };
+  // Optionally redirect or change the interface
+  window.location.href = "http://127.0.0.1:5502/public/index.html";
+}
 
-// ALTERNATIVE LOGIN AND REGISTRATION
-
-// document.getElementById('registrationForm').addEventListener('submit', function(event) {
-//   event.preventDefault();
-//   const email = document.getElementById('register-email').value;
-//   const password = document.getElementById('register-password').value;
-//   const username = document.getElementById('register-username').value;
-
-//   fetch('http://localhost:9999/auth/register', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ email, password, username })
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//       document.getElementById('registrationMessage').textContent = data.message || 'Registered successfully!';
-//   })
-//   .catch(error => {
-//       document.getElementById('registrationMessage').textContent = 'Failed to register!';
-//   });
-// });
-
-
-
-
-// document.getElementById('loginForm').addEventListener('submit', function(event) {
-//   event.preventDefault();
-//   const email = document.getElementById('login-email').value;
-//   const password = document.getElementById('login-password').value;
-
-//   fetch('http://localhost:9999/auth/login', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ email, password })
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//       document.getElementById('loginMessage').textContent = data.message;
-//   })
-//   .catch(error => {
-//       document.getElementById('loginMessage').textContent = 'Failed to login!';
-//   });
-// });
 
 
 
@@ -348,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
+// HAMBURGER MENU
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -360,6 +331,5 @@ document.addEventListener("DOMContentLoaded", function () {
     this.querySelector("svg.hidden").classList.toggle("hidden");
   });
 });
-
-// Set current year in footer
+// SETS CURRENT YEAR IN FOOTER
 document.getElementById("current-year").textContent = new Date().getFullYear();

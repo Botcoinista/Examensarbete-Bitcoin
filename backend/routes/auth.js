@@ -89,7 +89,7 @@ router.post("/login", async (req, res) => {
     // If the password is incorrect
     if (!isMatch)
       return res.status(500).json({
-        message: "Password is incorrect! ⚠️",
+        message: "Lösenordet stämmer inte! ⚠️",
         type: "error",
       });
 

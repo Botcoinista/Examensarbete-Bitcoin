@@ -18,7 +18,7 @@ const createRefreshToken = (id) => {
 const sendAccessToken = ( _req, res, accesstoken) => {
     res.send({
         accesstoken,
-        message: "Login was Successful 🥳",
+        message: "Login lyckades! 🥳",
         type: "success"
     });
 }
