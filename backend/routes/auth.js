@@ -120,7 +120,7 @@ router.post("/logout", (_req, res) => {
   // clear cookies
   res.clearCookie("refreshtoken");
   return res.json({
-    message: "Logged out successfully! 🤗",
+    message: "Du är nu utloggad! 🤗",
     type: "success",
   });
 });

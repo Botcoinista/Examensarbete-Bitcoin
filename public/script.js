@@ -99,6 +99,10 @@ function clearErrorMessage() {
   errorMessage.classList.add('hidden');
 }
 
+close-registrationModal.addEventListener('click', function() {
+  clearErrorMessage();
+});
+
 document.getElementById('close-registrationModal').addEventListener('click', function() {
   resetModal();
 });
@@ -117,14 +121,56 @@ function clearFormFields() {
   document.getElementById('register-username').value = '';
 }
 
-// function closeErrorMessage() {
-//   const errorMessage = document.getElementById("errorMessage");
-//   errorMessage.classList.add('hidden');
-// }
-
-close-registrationModal.addEventListener('click', function() {
-  clearErrorMessage();
+document.getElementById('loginLink').addEventListener('click', function() {
+  hideModal();
+  showLoginForm();
 });
+
+// LOGIN
+document.addEventListener('DOMContentLoaded', function() {
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      const errorDiv = document.getElementById("login-error"); // Ensure this ID exists for displaying errors.
+
+      try {
+        const response = await fetch("http://localhost:9999/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          alert("Login Successful");
+          // Handle successful login, e.g., redirect or change UI state
+        } else {
+          // Display the error message from the server in the modal
+          errorDiv.textContent = data.message;
+          errorDiv.style.display = 'block'; // Make sure the error div is visible
+        }
+      } catch (error) {
+        // Handle network errors or other unexpected issues
+        errorDiv.textContent = "Server error or network issue. Please try again later.";
+        errorDiv.style.display = 'block';
+      }
+    });
+  }
+
+  // Optionally, handle closing the modal
+  const closeModalBtn = document.getElementById('close-loginModal');
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function() {
+      document.getElementById('loginModal').style.display = 'none';
+    });
+  }
+});
+
 
 
 
@@ -171,9 +217,6 @@ close-registrationModal.addEventListener('click', function() {
         loginModal.classList.add('hidden');
     });
 });
-
-
-
 
 
 
