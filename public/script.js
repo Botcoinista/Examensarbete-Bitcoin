@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
           successMessage.textContent = data.message;
           successMessage.style.display = "block";
           setTimeout(() => {
-            window.location.href = "http://127.0.0.1:5502/public/index.html"
+            window.location.href = "http://127.0.0.1:5502/public/profile.html"
           }, 1500);
         } else {
           errorMessage.textContent = data.message;
