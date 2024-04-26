@@ -31,7 +31,6 @@
         </template>
     -->
 
-    <!-- <h2>Bitcoin ❤️</h2> -->
 
     <nav class="sticky top-0 z-10">
         <div class="mx-auto max-w-7xl sm:px-2">
@@ -40,7 +39,7 @@
                 
               <!-- Hamburger Menu -->
          <!-- Hamburger Menu Button -->
-            <button id="hamburger-btn" type="button" class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
+            <button id="hamburger-btn" type="button" class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700  text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
               <span class="sr-only">Open main menu</span>
               <svg class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -71,6 +70,7 @@
                   <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Nyheter</a>
                   <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Handla Bitcoin</a>
                   <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Om</a>
+                  <a href="profil.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Profil</a>
                 </div>
               </div>
             </div>
@@ -78,7 +78,6 @@
             <div class="hidden lg:block ml-8">
                 <input type="text" class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus" placeholder="Search...">
             </div>
-
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <!-- Notification Button -->
               <!-- <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -117,11 +116,7 @@
         </div>
     </div>
 </div>
-        
-      
-
-
-
+    
         <!-- Mobile menu -->
         <div class="hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
@@ -140,12 +135,12 @@
               
             <div class="flex flex-col mb-6">
               <!-- LOGIN BUTTON -->
-              <button id="loginButton" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
+              <button id="loginButtonMobile" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
                 Login
               </button>
               <!-- REGISTER BUTTON  -->
-              <button id="registerButton" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
-                Register
+              <button id="registerButtonMobile" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
+                Registrera
               </button>
             </div>
           </div>
@@ -156,38 +151,68 @@
 
       <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
 
-     <!-- Register Form -->
-     <div class="hidden flex justify-center items-center h-screen text-white ">
-      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-6 max-w-xl py-8 px-6 w-full bg-slate-600">
-        <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
-        <form class="space-y-16" id="registrationForm">
-            <div>
-                <label for="email" class="block font-medium">Email*</label>
-                <input type="email" id="register-email" name="email" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="password" class="block font-medium">Lösenord*</label>
-                <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-            </div>
-            <div>
-                <label for="username" class="block font-medium">Användarnamn</label>
-                <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg  text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-            </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
-    </div>
-    </div>
+      <h1>Bitcoin Gurus</h1>
 
-    <h1 class="text-2xl">Bitcoin-Gurus</h1>
-  
-  
-    <!-- FOOTER -->
-    <footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
-      <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
-    </footer>
-
-  
      
 
+<!-- FOOTER -->
+<footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
+  <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
+</footer>
+
+<!-- REGISTER FORM-->
+<div id="registrationModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
+  <div class="flex justify-center items-center h-screen text-white w-full">
+    <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
+      <button id="close-registrationModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+      <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
+      <form id="registrationForm" class="space-y-8">
+        <div>
+          <label for="email" class="block font-medium">Email*</label>
+          <input type="email" id="register-email" name="email" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="password" class="block font-medium">Lösenord*</label>
+          <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="username" class="block font-medium">Användarnamn</label>
+          <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
+      </form>
+      <span id="errorMessage" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
+      <span id="successMessage" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
+      <p id="loginLink" class="text-blue-200 cursor-pointer">Logga in</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN FORM -->
+<div id="loginModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
+    <div class="flex justify-center items-center h-screen text-white w-full">
+      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
+        <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
+        <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+        <form class="space-y-8" id="loginForm">
+          <div>
+            <label for="email" class="block font-medium">Email*</label>
+            <input type="email" id="login-email" name="email"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+          <div>
+            <label for="password" class="block font-medium">Lösenord*</label>
+            <input type="password" id="login-password" name="password"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          </div>
+            <button id="loginButton-form" type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
+        </form>
+            <span id="errorMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
+            <span id="successMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
+            <p id="registerLink" class="text-blue-200 cursor-pointer">Registrera</p>
+      </div>
+    </div>
+</div>
+
 <script src="script.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>
