@@ -29,125 +29,96 @@
 //         });
 //     })
 
-// Registration
-document
-  .getElementById("registrationForm")
-  .addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    // Clear any previous error messages
-    clearErrorMessage();
-
-    const email = document.getElementById("register-email").value;
-    const password = document.getElementById("register-password").value;
-    const username = document.getElementById("register-username").value;
-
-    try {
-      const response = await fetch("http://localhost:9999/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, username }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        showSuccessMessage(data.message); // Show success message from the server
-        console.log(data.message)
-        setTimeout(() => {
-          hideModal();
-          resetModal();
-          showLoginForm(); // Show login form after successful registration
-          clearFormFields();
-        }, 1500);
-      } else {
-        const data = await response.json(); // Show error message from the server
-        console.log(data.message)
-        showError(data.message);
-      }
-    } catch (error) {
-      showError("Ett oväntat fel uppstod, vänligen försök igen.");
-    }
-  });
-
-function showSuccessMessage(message) {
-  const successMessage = document.getElementById("successMessage");
-  successMessage.textContent = message;
-  successMessage.classList.remove("hidden");
-}
-
-function showError(message) {
-  const errorMessage = document.getElementById("errorMessage");
-  errorMessage.textContent = message;
-  errorMessage.classList.remove("hidden");
-}
-
-function hideModal() {
-  const modal = document.getElementById("registrationModal");
-  modal.classList.add("hidden");
-}
-
-function showLoginForm() {
-  const loginModal = document.getElementById("loginModal");
-  loginModal.classList.remove("hidden");
-}
-
-function clearErrorMessage() {
-  const errorMessage = document.getElementById("errorMessage");
-  errorMessage.textContent = "";
-  errorMessage.classList.add("hidden");
-}
-
-close -
-  registrationModal.addEventListener("click", function () {
-    clearErrorMessage();
-  });
-
-document
-  .getElementById("close-registrationModal")
-  .addEventListener("click", function () {
-    resetModal();
-  });
-
-function resetModal() {
-  const form = document.querySelector("#registrationModal form");
-  const successMessage = document.getElementById("successMessage");
-  form.classList.remove("hidden");
-  successMessage.classList.add("hidden");
-  clearFormFields();
-}
-
-function clearFormFields() {
-  document.getElementById("register-email").value = "";
-  document.getElementById("register-password").value = "";
-  document.getElementById("register-username").value = "";
-}
-
-document.getElementById("loginLink").addEventListener("click", function () {
-  hideModal();
-  showLoginForm();
-});
-
-// REGISTRATION MODAL
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize all event listeners once the DOM is fully loaded
+  const registrationForm = document.getElementById("registrationForm");
   const registerBtnDesktop = document.getElementById("registerButton");
   const registerBtnMobile = document.getElementById("registerButtonMobile");
   const registrationModal = document.getElementById("registrationModal");
   const closeBtn = document.getElementById("close-registrationModal");
+  const loginLink = document.getElementById("loginLink");
 
-  registerBtnDesktop.addEventListener("click", function () {
-    registrationModal.classList.remove("hidden");
+  // Event listeners for modal controls
+  registerBtnDesktop.addEventListener("click", () => registrationModal.classList.remove("hidden"));
+  registerBtnMobile.addEventListener("click", () => registrationModal.classList.remove("hidden"));
+  closeBtn.addEventListener("click", () => {
+      registrationModal.classList.add("hidden");
+      registerFunctions.resetModal();
+  });
+  loginLink.addEventListener("click", () => {
+      registerFunctions.hideModal();
+      registerFunctions.showLoginForm();
   });
 
-  registerBtnMobile.addEventListener("click", function () {
-    registrationModal.classList.remove("hidden");
-  });
+  // Handle form submission
+  registrationForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      registerFunctions.clearErrorMessage();
 
-  closeBtn.addEventListener("click", function () {
-    registrationModal.classList.add("hidden");
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      const username = document.getElementById("register-username").value;
+
+      console.log("Registering with:", { email, password, username });
+
+      try {
+          const response = await fetch("http://localhost:9999/auth/register", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, password, username }),
+          });
+
+          if (response.ok) {
+              const data = await response.json();
+              registerFunctions.showSuccessMessage(data.message);
+              setTimeout(() => {
+                  registerFunctions.hideModal();
+                  registerFunctions.resetModal();
+                  registerFunctions.showLoginForm();
+                  registerFunctions.clearFormFields();
+              }, 1500);
+          } else {
+              const data = await response.json();
+              registerFunctions.showError(data.message);
+          }
+      } catch (error) {
+          registerFunctions.showError("An unexpected error occurred. Please try again.");
+      }
   });
 });
+
+const registerFunctions = {
+  showSuccessMessage: function(message) {
+      document.getElementById("successMessage").textContent = message;
+      document.getElementById("successMessage").classList.remove("hidden");
+  },
+  showError: function(message) {
+      document.getElementById("errorMessage").textContent = message;
+      document.getElementById("errorMessage").classList.remove("hidden");
+  },
+  hideModal: function() {
+      document.getElementById("registrationModal").classList.add("hidden");
+  },
+  showLoginForm: function() {
+      document.getElementById("loginModal").classList.remove("hidden");
+  },
+  clearErrorMessage: function() {
+      document.getElementById("errorMessage").textContent = "";
+      document.getElementById("errorMessage").classList.add("hidden");
+  },
+  resetModal: function() {
+      const form = document.querySelector("#registrationModal form");
+      form.reset();
+      document.getElementById("successMessage").classList.add("hidden");
+      this.clearFormFields(); // Properly scoped call
+  },
+  clearFormFields: function() {
+      document.getElementById("register-email").value = "";
+      document.getElementById("register-password").value = "";
+      document.getElementById("register-username").value = "";
+  }
+};
+
 
 
 
