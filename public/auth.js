@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
+  // Define all functions related to registration modal
   const registerFunctions = {
     showSuccessMessage: function (message) {
       document.getElementById("successMessage").textContent = message;

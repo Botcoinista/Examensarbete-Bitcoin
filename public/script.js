@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
 
   if (modal) {
-    // Define showModal function only if modal is present
+    // Define showModal function only if modal is present.
     function showModal(imageSrc, title, text, hiddenText) {
       document.getElementById("modal-image").src = imageSrc;
       document.getElementById("modal-title").textContent = title;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.classList.remove("hidden");
     }
 
-    if (cards.length > 0) { // Check if there are any cards
+    if (cards.length > 0) { // Check if there are any cards. The if statement is not necessary, but it's a good practice to ensure that the event listeners are only added if the elements exist.
       cards.forEach(card => {
         card.addEventListener("click", function () {
           const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
