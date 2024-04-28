@@ -1,6 +1,10 @@
 /* body {
     background-color: rgb(63, 53, 53);
 } */
+/* body {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e,); 
+    color: #ffffff;
+} */
 body {
     background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e, #f7931a); /* from deep blue to purple with a touch of Bitcoin orange */
     color: #ffffff;
@@ -11,10 +15,10 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.modal {
+/* .modal {
     background: linear-gradient(to bottom, #7b7a80, #b9b8c6, #eaeaf0, #f7931a);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
 
 nav {
