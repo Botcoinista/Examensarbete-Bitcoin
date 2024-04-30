@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="./style.css">
-<style>
-  .custom-height {
-    height: 350px; /* Custom fixed height */
-  }
-
-</style>
-<title>Bitcoininfo</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .custom-height {
+        height: 350px; /* Custom fixed height */
+      }
+    </style>
+    <title>Bitcoininfo</title>
+  </head>
+  <body>
     <!-- <div class="search-wrapper">
         <label for="Search Users">Search Users</label>
         <input type="search" id="search" data-search>
@@ -31,60 +30,127 @@
         </template>
     -->
 
-
-
-
     <!-- NAVBAR -->
     <nav class="sticky top-0 z-10">
-        <div class="mx-auto max-w-7xl sm:px-2">
-          <div class="relative flex h-20 items-center justify-between">
-            <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
-                
-              <!-- Hamburger Menu -->
-         <!-- Hamburger Menu Button -->
-            <button id="hamburger-btn" type="button" class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700  text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
+      <div class="mx-auto max-w-7xl sm:px-2">
+        <div class="relative flex h-20 items-center justify-between">
+          <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+            <!-- Hamburger Menu -->
+            <!-- Hamburger Menu Button -->
+            <button
+              id="hamburger-btn"
+              type="button"
+              class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
+            >
               <span class="sr-only">Open main menu</span>
-              <svg class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              <svg
+                class="block h-8 w-8"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
               </svg>
               <!-- Icon when menu is open -->
-              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
-            </div>
-            <div class="flex flex-1 items-center sm:items-stretch sm:justify-start ml-2">
-              <!-- BITCOIN LOGO -->
-              <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
-                <i class="fa-brands fa-bitcoin"></i>
-                <a href="index.html">
-                  <img class="h-10 w-auto" src="./images/BitcoinLogo.svg" alt="Bitcoininfo">
-                </a>
-              </div>
-
-              <!-- Navbar links -->
-              <div class="hidden sm:ml-8 lg:block">
-                <div class="flex">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium" aria-current="page">Hem</a>
-                  <a href="bitcoin-gurus.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Bitcoin-Gurus</a>
-                  <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Guider</a>
-                  <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Podcasts</a>
-                  <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Nyheter</a>
-                  <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Handla</a>
-                  <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Om</a>
-                  <a href="profil.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Profil</a>
-                </div>
-              </div>
-            </div>
-            <!-- Searchfield -->
-            <div class="hidden lg:block ml-8">
-                <input type="text" class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus" placeholder="Search...">
+          </div>
+          <div
+            class="flex flex-1 items-center sm:items-stretch sm:justify-start ml-2"
+          >
+            <!-- BITCOIN LOGO -->
+            <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
+              <i class="fa-brands fa-bitcoin"></i>
+              <a href="index.html">
+                <img
+                  class="h-10 w-auto"
+                  src="./images/BitcoinLogo.svg"
+                  alt="Bitcoininfo"
+                />
+              </a>
             </div>
 
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <!-- Login/Avatar -->
-              <!-- <div class="relative ml-3 text-gray-400">
+            <!-- Navbar links -->
+            <div class="hidden sm:ml-8 lg:block">
+              <div class="flex">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a
+                  href="index.html"
+                  class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  aria-current="page"
+                  >Hem</a
+                >
+                <a
+                  href="bitcoin-gurus.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Bitcoin-Gurus</a
+                >
+                <a
+                  href="guider.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Guider</a
+                >
+                <a
+                  href="podcasts.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Podcasts</a
+                >
+                <a
+                  href="nyheter.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Nyheter</a
+                >
+                <a
+                  href="handla-bitcoin.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Handla</a
+                >
+                <a
+                  href="om.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Om</a
+                >
+                <a
+                  href="profil.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Profil</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Searchfield -->
+          <div class="hidden lg:block ml-8">
+            <input
+              type="text"
+              class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus"
+              placeholder="Search..."
+            />
+          </div>
+
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <!-- Login/Avatar -->
+            <!-- <div class="relative ml-3 text-gray-400">
                 <div>
                     <button type="button" class="relative font-bold flex rounded bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-gray-700" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                         <span class="absolute -inset-1.5"></span>
@@ -97,362 +163,712 @@
                 </div>
               </div>  -->
 
-            
-                <!-- LOGIN BUTTON -->
-                <button id="loginButton" class="hidden lg:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg">
-                  Login
-                </button>
-                
-                <!-- REGISTER BUTTON  -->
-                <button id="registerButton" class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg">
-                  Register
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-        
-      
+            <!-- LOGIN BUTTON -->
+            <button
+              id="loginButton"
+              class="hidden lg:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg"
+            >
+              Login
+            </button>
 
-
-
-        <!-- Mobile menu -->
-        <div class="hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-           
-             <!-- Searchfield -->
-             <div class="">
-                <input type="text" class="px-3 py-2 rounded-md text-black custom-focus w-full" placeholder="Search...">
-            </div>
-            <a href="index.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-            <a href="bitcoin-gurus.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Bitcoin-Gurus</a>
-            <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Guider</a>
-            <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Podcasts</a>
-            <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Nyheter</a>
-            <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Handla</a>
-            <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Om</a>
-
-                  <!-- LOGIN BUTTON & REGISTER BUTTON -->
-            <div class="flex flex-col mb-6">
-              <button id="loginButtonMobile" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
-                Login
-              </button>
-              <button id="registerButtonMobile" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
-                Registrera
-              </button>
-            </div>
+            <!-- REGISTER BUTTON  -->
+            <button
+              id="registerButton"
+              class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg"
+            >
+              Register
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
 
-      <div class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"></div>
+      <!-- Mobile menu -->
+      <div class="hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Searchfield -->
+          <div class="">
+            <input
+              type="text"
+              class="px-3 py-2 rounded-md text-black custom-focus w-full"
+              placeholder="Search..."
+            />
+          </div>
+          <a
+            href="index.html"
+            class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+            aria-current="page"
+            >Home</a
+          >
+          <a
+            href="bitcoin-gurus.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Bitcoin-Gurus</a
+          >
+          <a
+            href="guider.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Guider</a
+          >
+          <a
+            href="podcasts.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Podcasts</a
+          >
+          <a
+            href="nyheter.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Nyheter</a
+          >
+          <a
+            href="handla-bitcoin.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Handla</a
+          >
+          <a
+            href="om.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Om</a
+          >
 
-      <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
+          <!-- LOGIN BUTTON & REGISTER BUTTON -->
+          <div class="flex flex-col mb-6">
+            <button
+              id="loginButtonMobile"
+              class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg"
+            >
+              Login
+            </button>
+            <button
+              id="registerButtonMobile"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg"
+            >
+              Registrera
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-      <!-- ALTERNATIVE CARDS WITH WEB COMPONENTS -->
-      <!-- <bitcoin-cards></bitcoin-cards>      
+    <div
+      class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"
+    ></div>
+
+    <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
+
+    <!-- ALTERNATIVE CARDS WITH WEB COMPONENTS -->
+    <!-- <bitcoin-cards></bitcoin-cards>      
       <script src="cards.js"></script> -->
-      
-      <!-- MAIN TEXTCONTENT -->
-      <div class="p-8">
-        <div class="bg-gradient-to-b from-purple-800 via-pink-800 to-red-500 text-white rounded-lg p-4 mb-6 mx-auto lg:max-w-6xl">
-          <p class="flex justify-center text-xl md:text-2xl font-semibold mb-2 text-center">Välkommen till Bitcoininfo.se!</p>
-          <p class="text-md md:text-lg">Här eftersträvas att förklara vad Bitcoin är på ett enkelt sätt och att samla den mest relevanta informationen på ett ställe. Här på startsidan hittar du informationskort i <span class="font-bold">8</span> steg och <span class="mr-2 text-white bg-orange-400 p-1.5 rounded font-bold">länkar</span>som ger dig en grundläggande förståelse för Bitcoin. Klicka dig sedan vidare till andra sidor via huvudrubrikerna längst upp på sidan för att utforska och fördjupa dig inom ämnen som intresserar dig. Vid frågor kan du alltid ta kontakt här via <a href="mailto: bitcoininfo@hotmail.se
-            "class="text-blue-200 font-sem-bold">email</a>.
-          </p>
-        </div>
 
-        <div id="container-heading" class="flex text-center justify-center flex-col text-xl sm:text-2xl mt-8">
-          <h1 class="underline">Vanliga missuppfattningar gällande bitcoin</h1>
-          <p class="text-sm mb-6 text-rose-400">Tryck på respektive ämne för att få mer detaljerad information!</p>
-        </div>
-
-      
-          <div class="flex justify-center flex-wrap w-full">
-                    <ul class="flex flex-col md:flex-row">
-                      <li class="w-80 md:w-auto mb-2 md:mr-4">
-                          <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin är en bubbla</a>
-                      </li>
-                      <li class="w-full md:w-auto mb-2 md:mr-4">
-                        <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin är inte säkert</a>
-                      </li>
-                      <li class="w-full md:w-auto mb-2 md:mr-4">
-                        <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin kostar för mycket</a>
-                      </li>
-                      <li class="w-full md:w-auto mb-2 md:mr-4">
-                        <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin är dåligt för miljön</a>
-                      </li>
-                      <li class="w-full md:w-auto mb-2 md:mr-4">
-                        <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin är ett pyramidspel</a>
-                      </li>
-                      <li class="w-full md:w-auto mb-2 md:mr-4">
-                          <a class="block hover:text-black bg-orange-400 p-1.5 rounded font-bold w-full text-center" href="guider.html">Bitcoin är bara för kriminella</a>
-                      </li>
-                  </ul>
-          </div>
-     
-      
-
-    <!-- <div class="w-full border">
-      <div class="flex justify-center flex-wrap">
-        <div class="flex justify-center w-full sm:w-auto">
-          <ul class="flex flex-col md:flex-row flex-wrap cursor-pointer text-center">
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin är en bubbla</a>
-            </li>
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin är bara för kriminella</a>
-            </li>
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin är inte säkert</a>           
-            </li>                  
-          </ul>
-        </div>
-      
-        <div class="flex justify-center">
-          <ul class="flex flex-col md:flex-row flex-wrap cursor-pointer text-center">
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin är ett pyramidspel</a>
-            </li>
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin är dåligt för miljön</a>
-            </li>
-            <li class="mr-4 mb-6">
-              <a class="mr-2 hover:text-black bg-orange-400 p-2 rounded font-bold" href="guider.html" >Bitcoin kostar för mycket</a>
-            </li>
-          </ul>
-        </div>
+    <!-- MAIN TEXTCONTENT -->
+    <div class="p-8">
+      <div
+        class="bg-gradient-to-b from-purple-800 via-pink-800 to-red-500 text-white rounded-lg p-4 mb-6 mx-auto lg:max-w-6xl"
+      >
+        <p
+          class="flex justify-center text-xl md:text-2xl font-semibold mb-2 text-center"
+        >
+          Välkommen till Bitcoininfo.se!
+        </p>
+        <p class="text-md md:text-lg">
+          Här eftersträvas att förklara vad Bitcoin är på ett enkelt sätt och
+          att samla den mest relevanta informationen på ett ställe. Här på
+          startsidan hittar du informationskort i
+          <span class="font-bold">8</span> steg och
+          <span class="mr-2 text-white bg-orange-400 p-1.5 rounded font-bold"
+            >länkar</span
+          >som ger dig en grundläggande förståelse för Bitcoin. Klicka dig sedan
+          vidare till andra sidor via huvudrubrikerna längst upp på sidan för
+          att utforska och fördjupa dig inom ämnen som intresserar dig. Vid
+          frågor kan du alltid ta kontakt här via
+          <a
+            href="mailto: bitcoininfo@hotmail.se
+            "
+            class="text-blue-200 font-sem-bold"
+            >email</a
+          >.
+        </p>
       </div>
-    </div> -->
 
-</div>
-
-
+      <div
+        id="container-heading"
+        class="flex text-center justify-center flex-col text-xl sm:text-2xl mt-8"
+      >
+        <h1 class="underline">Vanliga missuppfattningar gällande bitcoin</h1>
+        <p class="text-sm mb-6 text-rose-400">
+          Tryck på respektive ämne för att få mer detaljerad information!
+        </p>
       </div>
-      
-       <!-- INFORMATION CARDS -->
-       <div class="container mx-auto min-h-screen p-4 sm:p-0 md:p-0 lg:p-0 xl:p-0">
-  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center">
+      <!-- LINKS TO GUIDES -->
+      <div class="flex justify-center flex-wrap w-full">
+        <ul class="flex flex-col md:flex-row">
+          <li class="w-80 md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin är en bubbla</a
+            >
+          </li>
+          <li class="w-full md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin är inte säkert</a
+            >
+          </li>
+          <li class="w-full md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin kostar för mycket</a
+            >
+          </li>
+          <li class="w-full md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin är dåligt för miljön</a
+            >
+          </li>
+          <li class="w-full md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin är ett pyramidspel</a
+            >
+          </li>
+          <li class="w-full md:w-auto mb-2 md:mr-4">
+            <a
+              class="block hover:text-white bg-orange-400 p-1.5 rounded font-bold w-full text-center"
+              href="guider.html"
+              >Bitcoin är bara för kriminella</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INFORMATION CARDS -->
+    <div class="container mx-auto min-h-screen p-4 sm:p-0 md:p-0 lg:p-0 xl:p-0">
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center"
+      >
         <!-- Card 1 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-1" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-satoshi.png" alt="Satoshi skaparen av Bitcoin Bild" class="rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">1. Varför skapades Bitcoin</h3>
-              <div class="text-gray-800">
-                  <p id="text-1">
-                    Bitcoin lanserades i januari 2009 av en anonym skapare som använde pseudonymen Satoshi Nakamoto som svar på den globala finanskrisen. 
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 1 -->
-                  <p class="hidden-text hidden">Detta initiativ syftade till att skapa en ekonomisk infrastruktur oberoende av centralbanker och traditionella finansiella institutioner, vilka ansågs ha bidragit till den ekonomiska nedgången genom riskfyllda investeringar och bristande transparens. Bitcoin introducerades som ett alternativt finansiellt system som använder blockchain-teknologi för att möjliggöra säkra, transparenta och oberoende transaktioner. Genom att eliminera behovet av mellanhänder, hoppades Nakamoto minska de kostnader och den korruption som ofta är förknippad med traditionella finansiella tjänster. Dessutom syftade skapandet av Bitcoin till att återställa och stärka individens kontroll över sina egna ekonomiska resurser och erbjuda en stabil valuta fri från politiska och ekonomiska manipulationer.</p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-1"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-satoshi.png"
+                alt="Satoshi skaparen av Bitcoin Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              1. Varför skapades Bitcoin
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-1">
+                Bitcoin lanserades i januari 2009 av en anonym skapare som
+                använde pseudonymen Satoshi Nakamoto som svar på den globala
+                finanskrisen.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 1 -->
+              <p class="hidden-text hidden">
+                Detta initiativ syftade till att skapa en ekonomisk
+                infrastruktur oberoende av centralbanker och traditionella
+                finansiella institutioner, vilka ansågs ha bidragit till den
+                ekonomiska nedgången genom riskfyllda investeringar och
+                bristande transparens. Bitcoin introducerades som ett
+                alternativt finansiellt system som använder blockchain-teknologi
+                för att möjliggöra säkra, transparenta och oberoende
+                transaktioner. Genom att eliminera behovet av mellanhänder,
+                hoppades Nakamoto minska de kostnader och den korruption som
+                ofta är förknippad med traditionella finansiella tjänster.
+                Dessutom syftade skapandet av Bitcoin till att återställa och
+                stärka individens kontroll över sina egna ekonomiska resurser
+                och erbjuda en stabil valuta fri från politiska och ekonomiska
+                manipulationer.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 2 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-2" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-decentralisering.png" alt="Decentralisering Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">2. Decentralisering</h3>
-              <div class="text-gray-800">
-                  <p id="text-2">En av de mest revolutionerande aspekterna och hjärtat av Bitcoin är dess decentraliserade natur, vilket undviker central kontroll.</p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 2 -->
-                  <p class="hidden-text hidden">
-                    Genom att distribuera databehandlingen över ett nätverk av datorer eliminerar Bitcoin behovet av en central myndighet som kan manipulera eller kontrollera pengars värde. Det innebär att ingen enskild institution eller regering kan kontrollera Bitcoin-nätverket. Istället sköts det av användarna själva genom en teknik som kallas blockchain. Detta möjliggörs genom att vem som helst, för en relativt låg kostnad, kan köpa utrustning för att sätta upp en så kallad "Bitcoin node". Genom att delta i nätverket och verifiera transaktioner bidrar dessa noder till att hålla nätverket säkert och pålitligt.
-                  </p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-2"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-decentralisering.png"
+                alt="Decentralisering Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              2. Decentralisering
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-2">
+                En av de mest revolutionerande aspekterna och hjärtat av Bitcoin
+                är dess decentraliserade natur, vilket undviker central
+                kontroll.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 2 -->
+              <p class="hidden-text hidden">
+                Genom att distribuera databehandlingen över ett nätverk av
+                datorer eliminerar Bitcoin behovet av en central myndighet som
+                kan manipulera eller kontrollera pengars värde. Det innebär att
+                ingen enskild institution eller regering kan kontrollera
+                Bitcoin-nätverket. Istället sköts det av användarna själva genom
+                en teknik som kallas blockchain. Detta möjliggörs genom att vem
+                som helst, för en relativt låg kostnad, kan köpa utrustning för
+                att sätta upp en så kallad "Bitcoin node". Genom att delta i
+                nätverket och verifiera transaktioner bidrar dessa noder till
+                att hålla nätverket säkert och pålitligt.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 3 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-3" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-unlimited-suply-fiat.png" alt="Inflation Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">3. Begränsad tillgång</h3>
-              <div class="text-gray-800">
-                  <p id="text-3">
-                    Bitcoins begränsade tillgång är en grundläggande egenskap som skiljer den från traditionella valutor, som kan tryckas i oändlighet av centralbanker. 
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 3 -->
-                  <p class="hidden-text hidden"> Denna fastställda gräns på 21 miljoner mynt är avsedd att förhindra inflation och efterlikna egenskaper hos ädelmetaller som guld. Denna knapphet har lett till att Bitcoin ibland kallas "digitalt guld", och är en stor anledning till dess attraktivitet som en långsiktig investering.</p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-3"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-unlimited-suply-fiat.png"
+                alt="Inflation Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              3. Begränsad tillgång
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-3">
+                Bitcoins begränsade tillgång är en grundläggande egenskap som
+                skiljer den från traditionella valutor, som kan tryckas i
+                oändlighet av centralbanker.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 3 -->
+              <p class="hidden-text hidden">
+                Denna fastställda gräns på 21 miljoner mynt är avsedd att
+                förhindra inflation och efterlikna egenskaper hos ädelmetaller
+                som guld. Denna knapphet har lett till att Bitcoin ibland kallas
+                "digitalt guld", och är en stor anledning till dess
+                attraktivitet som en långsiktig investering.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 4 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-4" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-bitcoin-is-secure.png" alt="Bitcoin är säkert Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">4. Världens säkraste nätverk</h3>
-              <div class="text-gray-800">
-                  <p id="text-4">
-                    Bitcoins säkerhetssystem är robust, baserat på kryptografiska principer som gör det nästan omöjligt att hacka eller förfalska.
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 4 -->
-                  <p class="hidden-text hidden"> Varje Bitcoin-transaktion verifieras genom ett nätverk av noder som använder sig av proof-of-work, (det som kallas mining) vilket kräver att de som "gräver" efter bitcoin löser komplexa matematiska problem. Detta säkerställer inte bara säkerheten utan också nätverkets neutralitet och oberoende.
-                  </p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-4"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-bitcoin-is-secure.png"
+                alt="Bitcoin är säkert Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              4. Världens säkraste nätverk
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-4">
+                Bitcoins säkerhetssystem är robust, baserat på kryptografiska
+                principer som gör det nästan omöjligt att hacka eller förfalska.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 4 -->
+              <p class="hidden-text hidden">
+                Varje Bitcoin-transaktion verifieras genom ett nätverk av noder
+                som använder sig av proof-of-work, (det som kallas mining)
+                vilket kräver att de som "gräver" efter bitcoin löser komplexa
+                matematiska problem. Detta säkerställer inte bara säkerheten
+                utan också nätverkets neutralitet och oberoende.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 5 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-5" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-trust no one.png" alt="Lita inte på banker Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">5. Don't Trust, Verify</h3>
-              <div class="text-gray-800">
-                  <p id="text-5">
-                    Med Bitcoin behöver du inte lita på en centralbank eller regering för att skydda din förmögenhet mot inflation eller politisk instabilitet. 
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 5 -->
-                  <p class="hidden-text hidden">Istället kan du själv kontrollera dina tillgångar (vara din egen bank) och överföra dem över hela världen snabbt och kostnadseffektivt utan att behöva förlita dig på en tredje part som en bank eller betalningsleverantör, vilka kan censurera eller blockera dina transaktioner. Detta skapar en form av finansiell yttrandefrihet där pengar kan flyttas fritt utan rädsla för godtycklig inblandning. 
-                    </p>
-                    <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-5"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-trust no one.png"
+                alt="Lita inte på banker Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              5. Don't Trust, Verify
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-5">
+                Med Bitcoin behöver du inte lita på en centralbank eller
+                regering för att skydda din förmögenhet mot inflation eller
+                politisk instabilitet.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 5 -->
+              <p class="hidden-text hidden">
+                Istället kan du själv kontrollera dina tillgångar (vara din egen
+                bank) och överföra dem över hela världen snabbt och
+                kostnadseffektivt utan att behöva förlita dig på en tredje part
+                som en bank eller betalningsleverantör, vilka kan censurera
+                eller blockera dina transaktioner. Detta skapar en form av
+                finansiell yttrandefrihet där pengar kan flyttas fritt utan
+                rädsla för godtycklig inblandning.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 6 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-6" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-crises.png" alt="Bank kris Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">6. Eliminering av risk</h3>
-              <div class="text-gray-800">
-                  <p id="text-6">
-                    Genom att använda Bitcoin kan du undvika de risker som är förknippade med traditionella valutor och finansiella system
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 6 -->
-                  <p class="hidden-text hidden">som till exempel bankers konkurs eller statlig manipulation av valutakurser. Med bitcoin litar du på det som är skrivet i kod som ingen enskild kan ändra, i en vanlig valuta är du i händerna på enstaka individer som kan göra det som är bäst för deras egna eller politiska vinning. </p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-6"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-crises.png"
+                alt="Bank kris Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              6. Eliminering av risk
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-6">
+                Genom att använda Bitcoin kan du undvika de risker som är
+                förknippade med traditionella valutor och finansiella system
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 6 -->
+              <p class="hidden-text hidden">
+                som till exempel bankers konkurs eller statlig manipulation av
+                valutakurser. Med bitcoin litar du på det som är skrivet i kod
+                som ingen enskild kan ändra, i en vanlig valuta är du i händerna
+                på enstaka individer som kan göra det som är bäst för deras egna
+                eller politiska vinning.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 7 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-7" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-optimistic-future.png" alt="Bitcoin ger oss en ljus framtid Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">7. En ljus framtid</h3>
-              <div class="text-gray-800">
-                  <p id="text-7"> Om Bitcoin skulle lyckas ta över som en dominerande global valuta, skulle det kunna innebära en mer inkluderande framtid.</p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 7 -->
-                  <p class="hidden-text hidden">Där människor över hela världen har större kontroll över sina egna ekonomiska resurser, med möjlighet att spara och investera på ett rättvist och hållbart sätt. Detta skulle kunna skapa en mer jämlik och stabil global ekonomi och öka hoppet om en framtid där var och en är sin egen bank, fri från manipulation och kontroll från centraliserade myndigheter. En sådan framtid inte bara öppnar upp för ekonomisk autonomi utan också för en värld där varje individ kan skydda sina tillgångar mot inflation och ekonomisk osäkerhet, vilket ger en djupare känsla av trygghet och hopp.</p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-7"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-optimistic-future.png"
+                alt="Bitcoin ger oss en ljus framtid Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">7. En ljus framtid</h3>
+            <div class="text-gray-800">
+              <p id="text-7">
+                Om Bitcoin skulle lyckas ta över som en dominerande global
+                valuta, skulle det kunna innebära en mer inkluderande framtid.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 7 -->
+              <p class="hidden-text hidden">
+                Där människor över hela världen har större kontroll över sina
+                egna ekonomiska resurser, med möjlighet att spara och investera
+                på ett rättvist och hållbart sätt. Detta skulle kunna skapa en
+                mer jämlik och stabil global ekonomi och öka hoppet om en
+                framtid där var och en är sin egen bank, fri från manipulation
+                och kontroll från centraliserade myndigheter. En sådan framtid
+                inte bara öppnar upp för ekonomisk autonomi utan också för en
+                värld där varje individ kan skydda sina tillgångar mot inflation
+                och ekonomisk osäkerhet, vilket ger en djupare känsla av
+                trygghet och hopp.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
         <!-- Card 8 -->
         <div class="mt-2 relative max-w-xs mx-auto">
-          <div id="card-8" class="card bg-white rounded-lg shadow-md p-6 cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div class="w-full">
-                  <img src="./images/DALL·E-fix-the-money.png" alt="Bitcoin en riktig revolution Bild" class=" rounded-md mb-4 w-72 h-52 object-cover">
-              </div>
-              <h3 class="text-lg font-semibold text-black">8. Fix the money fix the world</h3>
-              <div class="text-gray-800">
-                  <p id="text-8">
-                    I slutändan är bitcoin mer än bara en digital valuta; Bitcoin representerar en potentiell revolution för hur vi ser på och använder pengar. 
-                    </p>
-                    <span class="text-blue-500 cursor-pointer hidden sm:block">Visa mer...</span>
-                  <!-- Hidden text for Card 8 -->
-                  <p class="hidden-text hidden">Genom sin förmåga att erbjuda snabba, säkra och billiga transaktioner utan behov av traditionella finansiella mellanhänder, utmanar bitcoin grunderna i det globala finansiella systemet. Det är en teknologi som inte bara är en ny innovation utan en revolution som erbjuder möjligheten till ekonomisk frihet och jämlikhet för alla, överallt.</p>
-                  <button class="toggle-text text-rose-500 cursor-pointer sm:hidden">Visa mer...</button>
-              </div>
+          <div
+            id="card-8"
+            class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <div class="w-full">
+              <img
+                src="./images/DALL·E-fix-the-money.png"
+                alt="Bitcoin en riktig revolution Bild"
+                class="rounded-md mb-4 w-72 h-52 object-cover"
+              />
+            </div>
+            <h3 class="text-lg font-semibold text-black">
+              8. Fix the money fix the world
+            </h3>
+            <div class="text-gray-800">
+              <p id="text-8">
+                I slutändan är bitcoin mer än bara en digital valuta; Bitcoin
+                representerar en potentiell revolution för hur vi ser på och
+                använder pengar.
+              </p>
+              <span class="text-blue-500 cursor-pointer hidden sm:block"
+                >Visa mer...</span
+              >
+              <!-- Hidden text for Card 8 -->
+              <p class="hidden-text hidden">
+                Genom sin förmåga att erbjuda snabba, säkra och billiga
+                transaktioner utan behov av traditionella finansiella
+                mellanhänder, utmanar bitcoin grunderna i det globala
+                finansiella systemet. Det är en teknologi som inte bara är en ny
+                innovation utan en revolution som erbjuder möjligheten till
+                ekonomisk frihet och jämlikhet för alla, överallt.
+              </p>
+              <button
+                class="toggle-text text-rose-500 cursor-pointer sm:hidden"
+              >
+                Visa mer...
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- MODAL -->
-    <!-- MODAL -->
-<div id="modal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-  <div class="modal bg-white rounded-lg shadow-lg p-8 m-4 max-w-lg relative">
-    <button id="close-modal" class="text-black absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-    <img id="modal-image" src="" alt="Bitcoin Image" class="rounded-md mb-4 min-w-full object-cover">
-    <h3 id="modal-title" class="text-lg font-semibold text-black mb-2"></h3>
-    <div class="text-gray-800">
-      <span id="modal-text"></span>
-      <span id="modal-hidden-text"></span>
-    </div>
-  </div>
-</div>
-
-       </div>
-
-<!-- FOOTER -->
-<footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
-  <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
-</footer>
-
-<!-- REGISTER FORM-->
-<div id="registrationModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-  <div class="flex justify-center items-center h-screen text-white w-full">
-    <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
-      <button id="close-registrationModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-      <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
-      <form id="registrationForm" class="space-y-8">
-        <div>
-          <label for="email" class="block font-medium">Email*</label>
-          <input type="email" id="register-email" name="email" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div>
-        <div>
-          <label for="password" class="block font-medium">Lösenord*</label>
-          <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div>
-        <div>
-          <label for="username" class="block font-medium">Användarnamn</label>
-          <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-        </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
-      </form>
-      <span id="errorMessage" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
-      <span id="successMessage" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
-      <p id="loginLink" class="text-blue-200 cursor-pointer">Logga in</p>
-    </div>
-  </div>
-</div>
-
-<!-- LOGIN FORM -->
-<div id="loginModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-    <div class="flex justify-center items-center h-screen text-white w-full">
-      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
-        <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-        <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
-        <form class="space-y-8" id="loginForm">
-          <div>
-            <label for="email" class="block font-medium">Email*</label>
-            <input type="email" id="login-email" name="email"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+      <div
+        id="modal"
+        class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden"
+      >
+        <div
+          class="modal bg-white rounded-lg shadow-lg p-8 m-4 max-w-lg relative"
+        >
+          <button
+            id="close-modal"
+            class="text-black absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none"
+          >
+            &times;
+          </button>
+          <img
+            id="modal-image"
+            src=""
+            alt="Bitcoin Image"
+            class="rounded-md mb-4 min-w-full object-cover"
+          />
+          <h3
+            id="modal-title"
+            class="text-lg font-semibold text-black mb-2"
+          ></h3>
+          <div class="text-gray-800">
+            <span id="modal-text"></span>
+            <span id="modal-hidden-text"></span>
           </div>
-          <div>
-            <label for="password" class="block font-medium">Lösenord*</label>
-            <input type="password" id="login-password" name="password"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-          </div>
-            <button id="loginButton-form" type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
-        </form>
-            <span id="errorMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
-            <span id="successMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
-            <p id="registerLink" class="text-blue-200 cursor-pointer">Registrera</p>
+        </div>
       </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-<script src="auth.js"></script>
-</body>
+    <!-- FOOTER -->
+    <footer
+      class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full"
+    >
+      <p>
+        &copy <span id="current-year"></span> Bitcoininfo.se All rights reserved
+      </p>
+    </footer>
+
+    <!-- REGISTER FORM-->
+    <div
+      id="registrationModal"
+      class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden"
+    >
+      <div class="flex justify-center items-center h-screen text-white w-full">
+        <div
+          class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative"
+        >
+          <button
+            id="close-registrationModal"
+            class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none"
+          >
+            &times;
+          </button>
+          <h2 class="text-2xl font-bold mb-4 text-center">
+            Registrera Användare
+          </h2>
+          <form id="registrationForm" class="space-y-8">
+            <div>
+              <label for="email" class="block font-medium">Email*</label>
+              <input
+                type="email"
+                id="register-email"
+                name="email"
+                required
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="password" class="block font-medium">Lösenord*</label>
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                required
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="username" class="block font-medium"
+                >Användarnamn</label
+              >
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full"
+            >
+              Registrera
+            </button>
+          </form>
+          <span
+            id="errorMessage"
+            class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"
+          ></span>
+          <span
+            id="successMessage"
+            class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"
+          ></span>
+          <p id="loginLink" class="text-blue-200 cursor-pointer">Logga in</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div
+      id="loginModal"
+      class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden"
+    >
+      <div class="flex justify-center items-center h-screen text-white w-full">
+        <div
+          class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative"
+        >
+          <button
+            id="close-loginModal"
+            class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none"
+          >
+            &times;
+          </button>
+          <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+          <form class="space-y-8" id="loginForm">
+            <div>
+              <label for="email" class="block font-medium">Email*</label>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="password" class="block font-medium">Lösenord*</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              id="loginButton-form"
+              type="submit"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full"
+            >
+              Logga in
+            </button>
+          </form>
+          <span
+            id="errorMessageLogin"
+            class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"
+          ></span>
+          <span
+            id="successMessageLogin"
+            class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"
+          ></span>
+          <p id="registerLink" class="text-blue-200 cursor-pointer">
+            Registrera
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+  </body>
 </html>
