@@ -53,6 +53,12 @@ a {
     background-color: transparent; /* Darker shade for better contrast */
   }
 
+  h1[id] { /* This selector targets all h1 elements with an id */
+    padding-top: 100px;  /* Adjust this value based on the height of your fixed header */
+    margin-top: -80px;  /* This should be the negative value of padding-top */
+  }
+  
+
 
 
 
