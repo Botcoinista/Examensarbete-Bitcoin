@@ -1,33 +1,47 @@
-// const userCardTemplate = document.querySelector("[data-user-template]");
-// const userCardContainer = document.querySelector("[data-user-cards-container]");
-// const searchInput = document.querySelector("[data-search]");
+// Parse HTML articles
+function parseArticles(htmlContent) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlContent, 'text/html');
 
-// let users = [];
+  // Extract relevant information from the parsed HTML document
+  const title = doc.querySelector('title').textContent;
+  const headlines = doc.querySelectorAll('h1, h2, h3');
+  const textContent = doc.body.textContent;
 
-//    // Attach event listener after populating users array
-//    searchInput.addEventListener("input", e => {
-//     const value = e.target.value.toLowerCase();
-//     users.forEach(user => {
-//         const isVisible =
-//             user.name.toLowerCase().includes(value) ||
-//             user.email.toLowerCase().includes(value);
-//         user.element.classList.toggle("hide", !isVisible);
-//     });
-// })
+  return { title, headlines, textContent };
+}
 
-// fetch("https://jsonplaceholder.typicode.com/users")
-//     .then(response => response.json())
-//     .then(data => {
-//         users = data.map(user => {
-//             const card = userCardTemplate.content.cloneNode(true).querySelector(".card");
-//             const header = card.querySelector("[data-header]");
-//             const body = card.querySelector("[data-body]");
-//             header.textContent = user.name;
-//             body.textContent = user.email;
-//             userCardContainer.append(card);
-//             return { name: user.name, email: user.email, element: card }
-//         });
-//     })
+// Build search index
+function buildSearchIndex(articles) {
+  const index = [];
+  articles.forEach((article, index) => {
+      const parsedArticle = parseArticles(article);
+      index.push({
+          id: index,
+          title: parsedArticle.title,
+          headlines: Array.from(parsedArticle.headlines).map(h => h.textContent),
+          textContent: parsedArticle.textContent
+      });
+  });
+  return index;
+}
+
+// Implement search functionality
+function search(query, index) {
+  const results = index.filter(article =>
+      article.title.includes(query) ||
+      article.headlines.some(headline => headline.includes(query)) ||
+      article.textContent.includes(query)
+  );
+  return results;
+}
+
+// Example usage
+// const articles = [...]; // Array of HTML article contents
+// const searchIndex = buildSearchIndex(articles);
+// const query = 'Bitcoin';
+// const searchResults = search(query, searchIndex);
+// console.log(searchResults);
 
 
 
