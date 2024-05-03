@@ -73,36 +73,41 @@ a {
 }
 
 
-/* .search-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+#searchResults {
+    position: absolute;
+    background: white;
+    width: calc(100% - 20px);
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    display: none; /* Hide by default, show when there are results */
+    padding-right: 10px; /* Add some padding to create space for scrollbar */
 }
 
-input {
-    font-size: 1rem;
+#searchResults:hover {
+    color: #333234;
 }
 
-.user-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: .25rem;
-    margin-top: 1rem;
-
+.search-result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
 }
 
-.card {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.search-result-item:hover {
+    background: #e4e4e4;
 }
 
-.card > .body {
-    font-size: .8rem;
+.search-result-item a {
+    text-decoration: none;
+    color: black;
 }
 
-.hide {
-    display: none;
-} */
+.search-result-item:last-child {
+    border-bottom: none;
+}
 
+  

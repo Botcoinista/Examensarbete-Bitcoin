@@ -127,11 +127,13 @@
           <!-- Searchfield -->
           <div class="hidden lg:block ml-8">
             <input
-              type="text"
-              class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus"
-              placeholder="Search..."
-            />
-          </div>
+            type="text"
+            class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus"
+            placeholder="Search..."
+            id="searchInput"
+          />
+          <div id="searchResults"></div>
+        </div>
 
           <div
             class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
@@ -172,6 +174,7 @@
       <!-- Mobile menu -->
       <div class="hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
+
           <!-- Searchfield -->
           <div class="">
             <input
@@ -180,6 +183,8 @@
               placeholder="Search..."
             />
           </div>
+          <div id="searchResults"></div>
+          
           <a
             href="index.html"
             class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
@@ -270,7 +275,7 @@
           <a
             href="mailto: bitcoininfo@hotmail.se
             "
-            class="text-blue-200 font-sem-bold"
+            class="text-blue-400 font-bold"
             >email</a
           >.
         </p>
@@ -340,7 +345,7 @@
         class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center"
       >
         <!-- Card 1 -->
-        <div class="mt-2 relative max-w-xs mx-auto">
+        <div class="searchable mt-2 relative max-w-xs mx-auto">
           <div
             id="card-1"
             class="card bg-white rounded-lg shadow-md p-4 cursor-pointer transition-transform duration-300 hover:scale-105"
@@ -857,5 +862,6 @@
 
     <script src="script.js"></script>
     <script src="auth.js"></script>
+    <script src="search.js"></script>
   </body>
 </html>
