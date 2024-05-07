@@ -16,6 +16,10 @@ body {
     color: #000000;
 }
 
+html {
+    scroll-padding-top: 100px;
+}
+
 .card {
     background-color: white;
 }
@@ -38,7 +42,7 @@ nav {
     color: white;
 }
 
-/* nav {
+/* nav {    
     background-color: #2F4F4F;
     color: white;
 } */
@@ -53,11 +57,15 @@ a {
     background-color: transparent; /* Darker shade for better contrast */
   }
 
-  h1[id] { /* This selector targets all h1 elements with an id */
-    padding-top: 100px;  /* Adjust this value based on the height of your fixed header */
-    margin-top: -80px;  /* This should be the negative value of padding-top */
-  }
+  /* h1[id] { 
+    padding-top: 50px; 
+    margin-top: +5px;
+  } */
   
+  .adjust-for-header {
+    padding-top: 100px;
+    margin-top: -80px;
+}
 
 
 
@@ -71,6 +79,11 @@ a {
 .custom-focus:focus {
     border-color: orange; /* Change border color when focused */
 }
+
+
+
+
+
 
 
 #searchResults {

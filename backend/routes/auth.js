@@ -186,28 +186,32 @@ router.post("/refresh_token", async (req, res) => {
 });
 
 // PROTECTED ROUTE
-router.get("/protected", verify, async (req, res) => {
+
+// protected route
+router.get("/protected", protected, async (req, res) => {
   try {
-    // If user exists in the request, send the data
+    // if user exists in the request, send the data
     if (req.user)
       return res.json({
         message: "You are logged in! 🤗",
         type: "success",
         user: req.user,
       });
-    // If user doesn't exit, return error
+    // if user doesn't exist, return error
     return res.status(500).json({
       message: "You are not logged in! 😢",
       type: "error",
     });
   } catch (error) {
-    return res.status(500).json({
-      message: "Error getting protected route! 😢",
+    res.status(500).json({
       type: "error",
+      message: "Error getting protected route!",
       error,
     });
   }
 });
+
+
 
 const { createPasswordResetToken } = require("../utils/tokens");
 const {

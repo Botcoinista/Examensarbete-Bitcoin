@@ -72,5 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     this.querySelector("svg.hidden").classList.toggle("hidden");
   });
 });
+
 // SETS CURRENT YEAR IN FOOTER
 document.getElementById("current-year").textContent = new Date().getFullYear();
