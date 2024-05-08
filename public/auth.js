@@ -174,51 +174,58 @@ function isAuthenticated() {
 // Protect the profile page by redirecting to login if not authenticated
 function protectProfilePage() {
   if (!isAuthenticated()) {
+    // q: how to Protect the route?
+
       // Redirect to the login page if the user isn't authenticated
       window.location.href = "http://127.0.0.1:5502/public/index.html";
   }
 }
 
-// Function to show or hide the profile navigation link based on authentication
+protectProfilePage();
+
 function updateNavLinkVisibility() {
-  const profileNavLink = document.getElementById('profile-nav-link'); // Replace with your actual "Profile" link ID
+  const profileNavLink = document.getElementById('profileNavLink'); 
+  console.log("Checking authentication for profile link...");
   if (isAuthenticated()) {
+      console.log("User authenticated, showing profile link");
       profileNavLink.style.display = 'block'; // Show the link if authenticated
   } else {
+      console.log("User not authenticated, hiding profile link");
       profileNavLink.style.display = 'none'; // Hide the link if not authenticated
   }
 }
 
-// Call the function to update the link visibility after the DOM content is loaded
+
+// // Call the function to update the link visibility after the DOM content is loaded
 document.addEventListener('DOMContentLoaded', updateNavLinkVisibility);
 
 
 
 
 
-function greetUser() {
-  // Get the access token from local storage
-  const token = localStorage.getItem('accessToken');
-  // Decode the token to get the user ID
-  const decodedToken = jwt_decode(token);
-  // Fetch the user's details using the user ID
-  fetch(`http://localhost:9999/user/${decodedToken.id}`, {
-      headers: {
-          Authorization: `Bearer ${token}`
-      }
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Update the profile page with the user's details
-      document.getElementById('username').textContent = data.username;
+// function greetUser() {
+//   // Get the access token from local storage
+//   const token = localStorage.getItem('accessToken');
+//   // Decode the token to get the user ID
+//   const decodedToken = jwt_decode(token);
+//   // Fetch the user's details using the user ID
+//   fetch(`http://localhost:9999/user/${decodedToken.id}`, {
+//       headers: {
+//           Authorization: `Bearer ${token}`
+//       }
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//       // Update the profile page with the user's details
+//       document.getElementById('username').textContent = data.username;
      
-  });
-}
+//   });
+// }
 
-// On the profile page, invoke the protection function to verify access
-if (window.location.pathname.includes('profil.html')) {
-  protectProfilePage();
-}
+// // On the profile page, invoke the protection function to verify access
+// if (window.location.pathname.includes('profil.html')) {
+//   protectProfilePage();
+// }
 
 
 
@@ -234,53 +241,3 @@ function logOut() {
 }
 
 
-
-
-
-
-
-
-
-  // Login form processing
-//   if (loginForm) {
-//     loginForm.addEventListener("submit", async function (event) {
-//       event.preventDefault();
-//       const email = document.getElementById("login-email").value;
-//       const password = document.getElementById("login-password").value;
-//       const errorMessage = document.getElementById("errorMessageLogin");
-//       const successMessage = document.getElementById("successMessageLogin");
-
-//       try {
-//         const response = await fetch("http://localhost:9999/auth/login", {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//           },
-//           body: JSON.stringify({ email, password }),
-//         });
-
-//         const data = await response.json();
-//         console.log("Login Response Data:", data); 
-//         if (response.ok) {
-//           // Change login button to log out
-//           loginButton.textContent = "Log out";
-//           loginButton.onclick = function () {
-//             logOut();
-//           };
-//           successMessage.textContent = data.message;
-//           successMessage.style.display = "block";
-
-//             setTimeout(() => {
-//               window.location.href = "http://127.0.0.1:5502/public/profil.html";
-//             }, 1500);
-//         } else {
-//           errorMessage.textContent = data.message;
-//           errorMessage.style.display = "block";
-//         }
-//       } catch (error) {
-//         errorMessage.textContent = "An unexpected error occurred. Please try again.";
-//         errorMessage.style.display = "block";
-//       }
-//     });
-//   }
-// });
