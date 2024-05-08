@@ -144,8 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Login Response Data:", data); 
         if (response.ok) {
           // If login is successful, store the access token and redirect to the profile page
-          localStorage.setItem('accessToken', data.accessToken); // Assuming `data.accessToken` contains the token
-        
+          localStorage.setItem('accessToken', data.accessToken);
+          console.log('Access Token:', data.accessToken);
           successMessage.textContent = data.message;
           successMessage.style.display = "block";
 
@@ -164,40 +164,91 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 // Function to check if the user is authenticated
-function isAuthenticated() {
-  // Check if the access token is present
-  const token = localStorage.getItem('accessToken');
-  return !!token; // Convert the token existence check into a boolean
-}
+const isAuthenticated = () => {
+  const accessToken = localStorage.getItem('accessToken');
+  return accessToken !== null;
+};
 
-// Protect the profile page by redirecting to login if not authenticated
-function protectProfilePage() {
+// Function to fetch user profile data
+const fetchUserProfile = async () => {
+  try {
+    const accessToken = localStorage.getItem('accessToken');
+    const response = await fetch('http://localhost:9999/auth/protected', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    });
+
+    if (response.ok) {
+      const userData = await response.json();
+      console.log('User Profile Data:', userData);
+      // Proceed with rendering the profile page with the fetched user data
+    } else {
+      console.error('Error fetching user profile:', response.statusText);
+      // Handle error response (e.g., token expired or invalid)
+      // Redirect to login page or display an error message
+    }
+  } catch (error) {
+    console.error('An unexpected error occurred:', error);
+    // Handle unexpected errors
+  }
+};
+
+// Check if the user is authenticated before fetching profile data
+document.addEventListener('DOMContentLoaded', () => {
   if (!isAuthenticated()) {
-    // q: how to Protect the route?
-
-      // Redirect to the login page if the user isn't authenticated
-      window.location.href = "http://127.0.0.1:5502/public/index.html";
-  }
-}
-
-protectProfilePage();
-
-function updateNavLinkVisibility() {
-  const profileNavLink = document.getElementById('profileNavLink'); 
-  console.log("Checking authentication for profile link...");
-  if (isAuthenticated()) {
-      console.log("User authenticated, showing profile link");
-      profileNavLink.style.display = 'block'; // Show the link if authenticated
+    console.log('User is not authenticated. Redirecting to login page...');
+    // Redirect the user to the login page
+    window.location.href = 'http://127.0.0.1:5502/public/login.html';
   } else {
-      console.log("User not authenticated, hiding profile link");
-      profileNavLink.style.display = 'none'; // Hide the link if not authenticated
+    console.log('User is authenticated. Fetching user profile...');
+    // Fetch user profile data if the user is authenticated
+    fetchUserProfile();
   }
-}
+});
 
 
-// // Call the function to update the link visibility after the DOM content is loaded
-document.addEventListener('DOMContentLoaded', updateNavLinkVisibility);
+
+
+
+
+// // Function to check if the user is authenticated
+// function isAuthenticated() {
+//   // Check if the access token is present
+//   const token = localStorage.getItem('accessToken');
+//   return !!token; // Convert the token existence check into a boolean
+// }
+
+// // Protect the profile page by redirecting to login if not authenticated
+// function protectProfilePage() {
+//   if (isAuthenticated()) {
+//       console.log("User authenticated, showing profile page");
+//       // greetUser();
+
+
+//   }
+// }
+
+
+
+// function updateNavLinkVisibility() {
+//   const profileNavLink = document.getElementById('profileNavLink'); 
+//   console.log("Checking authentication for profile link...");
+//   if (isAuthenticated()) {
+//       console.log("User authenticated, showing profile link");
+//       profileNavLink.style.display = 'block'; // Show the link if authenticated
+//   } else {
+//       console.log("User not authenticated, hiding profile link");
+//       profileNavLink.style.display = 'none'; // Hide the link if not authenticated
+//   }
+// }
+
+
+// // // Call the function to update the link visibility after the DOM content is loaded
+// document.addEventListener('DOMContentLoaded', updateNavLinkVisibility);
 
 
 
@@ -217,7 +268,7 @@ document.addEventListener('DOMContentLoaded', updateNavLinkVisibility);
 //   .then(response => response.json())
 //   .then(data => {
 //       // Update the profile page with the user's details
-//       document.getElementById('username').textContent = data.username;
+//       document.getElementById('username').textContent = data.username || 'Unknown User';
      
 //   });
 // }

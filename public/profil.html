@@ -70,7 +70,7 @@
                   <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Nyheter</a>
                   <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Handla</a>
                   <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Om</a>
-                  <a href="profil.html"id="profileNavLink" class=" text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Profil</a>
+                  <a href="profil.html"id="profilePageLink" class=" text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Profil</a>
                 </div>
               </div>
             </div>
@@ -151,7 +151,8 @@
 
       <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
 
-      <h1 class="text-4xl min-h-screen ">Profil</h1>
+      <h1 id="profilePageLink" class="text-4xl text-white min-h-screen ">Profil</h1>
+
 
      
 
@@ -207,6 +208,8 @@
         </form>
             <span id="errorMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
             <span id="successMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
+            <div id="successMessage" style="display: none; color: green; font-weight: bold;"></div>
+            <div id="errorMessage" style="display: none; color: red; font-weight: bold;"></div>
             <p id="registerLink" class="text-blue-200 cursor-pointer">Registrera</p>
       </div>
     </div>

@@ -12,6 +12,7 @@ const {
   sendAccessToken,
   sendRefreshToken,
 } = require("../utils/tokens");
+
 const { protected } = require('../utils/protected')
 
 /* GET main auth page. */
