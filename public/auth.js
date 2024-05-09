@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!isAuthenticated()) {
     console.log('User is not authenticated. Redirecting to login page...');
     // Redirect the user to the login page
-    window.location.href = 'http://127.0.0.1:5502/public/login.html';
+    // window.location.href = 'http://127.0.0.1:5502/public/index.html';
   } else {
     console.log('User is authenticated. Fetching user profile...');
     // Fetch user profile data if the user is authenticated
