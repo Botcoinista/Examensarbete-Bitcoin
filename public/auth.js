@@ -103,11 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const loginButton = document.getElementById("loginButton");
   const loginModal = document.getElementById("loginModal");
+  const registrationForm = document.getElementById("registrationForm");
   
   // Show login modal event listeners
   const loginBtnDesktop = document.getElementById("loginButton");
   const loginBtnMobile = document.getElementById("loginButtonMobile");
   const closeBtn = document.getElementById("close-loginModal");
+  const registerLink = document.getElementById("registerLink");
   
   loginBtnDesktop.addEventListener("click", function () {
     loginModal.classList.remove("hidden");
@@ -120,6 +122,13 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("click", function () {
     loginModal.classList.add("hidden");
   });
+
+  registerLink.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+    registrationModal.classList.remove("hidden");
+
+  });
+
 
 
   // Login form processing
