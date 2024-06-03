@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<link rel="stylesheet" href="./style.css">
-<style>
-  .custom-height {
-    height: 350px; /* Custom fixed height */
-  }
-
-</style>
-<title>Bitcoininfo</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-nbdBv93Z0LxB/wyEjpP5kCeG76suPA2F4oUscjZOKtkUHz+HxOxD9Jlvxm5MGSTvX3wEocfR1x9RrKC/1zlRyg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .custom-height {
+        height: 350px; /* Custom fixed height */
+      }
+    </style>
+    <title>Bitcoininfo</title>
+  </head>
+  <body>
     <!-- <div class="search-wrapper">
         <label for="Search Users">Search Users</label>
         <input type="search" id="search" data-search>
@@ -31,188 +30,435 @@
         </template>
     -->
 
-
     <nav class="sticky top-0 z-10">
-        <div class="mx-auto max-w-7xl sm:px-2">
-          <div class="relative flex h-20 items-center justify-between">
-            <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
-                
-              <!-- Hamburger Menu -->
-         <!-- Hamburger Menu Button -->
-            <button id="hamburger-btn" type="button" class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700  text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden">
+      <div class="mx-auto max-w-7xl sm:px-2">
+        <div class="relative flex h-20 items-center justify-between">
+          <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+            <!-- Hamburger Menu -->
+            <!-- Hamburger Menu Button -->
+            <button
+              id="hamburger-btn"
+              type="button"
+              class="mr-2 relative right-0 inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 text-orange-400 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
+            >
               <span class="sr-only">Open main menu</span>
-              <svg class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              <svg
+                class="block h-8 w-8"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
               </svg>
               <!-- Icon when menu is open -->
-              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
+          </div>
+          <div
+            class="flex flex-1 items-center sm:items-stretch sm:justify-start ml-2"
+          >
+            <!-- BITCOIN LOGO -->
+            <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
+              <i class="fa-brands fa-bitcoin"></i>
+              <a href="index.html">
+                <img
+                  class="h-10 w-auto"
+                  src="./images/BitcoinLogo.svg"
+                  alt="Bitcoininfo"
+                />
+              </a>
             </div>
-            <div class="flex flex-1 items-center sm:items-stretch sm:justify-start ml-2">
-              <!-- BITCOIN LOGO -->
-              <div class="sm:flex flex-shrink-0 items-center cursor-pointer">
-                <i class="fa-brands fa-bitcoin"></i>
-                <a href="index.html">
-                  <img class="h-10 w-auto" src="./images/BitcoinLogo.svg" alt="Bitcoininfo">
-                </a>
-              </div>
 
-              <!-- Navbar links -->
-              <div class="hidden sm:ml-8 lg:block">
-                <div class="flex">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="index.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium" aria-current="page">Hem</a>
-                  <a href="bitcoin-gurus.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Bitcoin-Gurus</a>
-                  <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Guider</a>
-                  <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Podcasts</a>
-                  <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Nyheter</a>
-                  <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Handla</a>
-                  <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Om</a>
-                  <a href="profil.html"id="profileNavLink" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium">Profil</a>
-                </div>
+            <!-- Navbar links -->
+            <div class="hidden sm:ml-8 lg:block">
+              <div class="flex">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a
+                  href="index.html"
+                  class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  aria-current="page"
+                  >Hem</a
+                >
+                <a
+                  href="bitcoin-gurus.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Bitcoin-Gurus</a
+                >
+                <a
+                  href="guider.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Guider</a
+                >
+                <a
+                  href="podcasts.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Podcasts</a
+                >
+                <a
+                  href="nyheter.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Nyheter</a
+                >
+                <a
+                  href="handla-bitcoin.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Handla</a
+                >
+                <a
+                  href="om.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Om</a
+                >
+                <a
+                  href="profil.html"
+                  id="profileNavLink"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm xl:text-lg font-medium"
+                  >Profil</a
+                >
               </div>
-            </div>
-            <!-- Searchfield -->
-            <div class="hidden lg:block ml-8">
-                <input type="text" class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus" placeholder="Search...">
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <!-- Notification Button -->
-              <!-- <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">View notifications</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
-              </button> -->
-      
-              <!-- Login/Register -->
-              <!-- <div class="relative ml-3 text-gray-400">
-                <div>
-                    <button type="button" class="relative font-bold flex rounded bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-gray-700" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        <span class="absolute -inset-1.5"></span>
-                        <span class="sr-only">Open user menu</span>
-                         <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Avatar">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 180" class="w-16 h-9 p-1">
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="150px" fill="orange">Login</text>
-                        </svg>
-                    </button>
-                </div>
-              </div> -->
-
-            
-                <!-- LOGIN BUTTON -->
-                <button id="loginButton" class="hidden lg:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg">
-                  Login
-                </button>
-                
-                <!-- REGISTER BUTTON  -->
-                <button id="registerButton" class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg">
-                  Register
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-    
-        <!-- Mobile menu -->
-        <div class="hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-           
-             <!-- Searchfield -->
-             <div class="">
-                <input type="text" class="px-3 py-2 rounded-md text-black custom-focus w-full" placeholder="Search...">
-            </div>
-            <a href="index.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-            <a href="bitcoin-gurus.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Bitcoin-Gurus</a>
-            <a href="guider.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Guider</a>
-            <a href="podcasts.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Podcasts</a>
-            <a href="nyheter.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Nyheter</a>
-            <a href="handla-bitcoin.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Handla</a>
-            <a href="om.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Om</a>
-              
-            <div class="flex flex-col mb-6">
-              <!-- LOGIN BUTTON -->
-              <button id="loginButtonMobile" class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg">
-                Login
-              </button>
-              <!-- REGISTER BUTTON  -->
-              <button id="registerButtonMobile" class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg">
-                Registrera
-              </button>
             </div>
           </div>
+          <!-- Searchfield -->
+          <div class="hidden lg:block ml-8">
+            <input
+              type="text"
+              class="px-3 py-2 rounded-md w-20 lg:w-32 xl:w-56 text-black custom-focus"
+              placeholder="Search..."
+            />
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <!-- LOGIN BUTTON -->
+            <button
+              id="loginButton"
+              class="hidden lg:block bg-gray-800 shadow-lg shadow-orange-500/50 text-orange-500 font-bold ml-3 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-500 text-sm xl:text-lg"
+            >
+              Login
+            </button>
+
+            <!-- REGISTER BUTTON  -->
+            <button
+              id="registerButton"
+              class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-medium ml-3 px-3 py-2 rounded text-sm xl:text-lg"
+            >
+              Register
+            </button>
+          </div>
         </div>
-      </nav>
+      </div>
 
-      <div class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"></div>
+      <!-- Mobile menu -->
+      <div class="hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Searchfield -->
+          <div class="">
+            <input
+              type="text"
+              class="px-3 py-2 rounded-md text-black custom-focus w-full"
+              placeholder="Search..."
+            />
+          </div>
+          <a
+            href="index.html"
+            class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+            aria-current="page"
+            >Home</a
+          >
+          <a
+            href="bitcoin-gurus.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Bitcoin-Gurus</a
+          >
+          <a
+            href="guider.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Guider</a
+          >
+          <a
+            href="podcasts.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Podcasts</a
+          >
+          <a
+            href="nyheter.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Nyheter</a
+          >
+          <a
+            href="handla-bitcoin.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Handla</a
+          >
+          <a
+            href="om.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Om</a
+          >
 
-      <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
-
-      <h1 class="min-h-screen ">Podcasts</h1>
-
-     
-
-<!-- FOOTER -->
-<footer class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full">
-  <p>&copy <span id="current-year"></span> Bitcoininfo.se All rights reserved</p>
-</footer>
-
-<!-- REGISTER FORM-->
-<div id="registrationModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-  <div class="flex justify-center items-center h-screen text-white w-full">
-    <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
-      <button id="close-registrationModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-      <h2 class="text-2xl font-bold mb-4 text-center">Registrera Användare</h2>
-      <form id="registrationForm" class="space-y-8">
-        <div>
-          <label for="email" class="block font-medium">Email*</label>
-          <input type="email" id="register-email" name="email" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+          <div class="flex flex-col mb-6">
+            <!-- LOGIN BUTTON -->
+            <button
+              id="loginButtonMobile"
+              class="bg-orange-500 shadow-lg shadow-orange-500/50 text-white font-bold mb-2 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white hover:bg-orange-600 text-sm lg:text-lg"
+            >
+              Login
+            </button>
+            <!-- REGISTER BUTTON  -->
+            <button
+              id="registerButtonMobile"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-medium px-3 py-2 rounded text-sm lg:text-lg"
+            >
+              Registrera
+            </button>
+          </div>
         </div>
-        <div>
-          <label for="password" class="block font-medium">Lösenord*</label>
-          <input type="password" id="register-password" name="password" required class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+      </div>
+    </nav>
+
+    <div
+      class="border-b border-gray-300 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"
+    ></div>
+
+    <!-- bg-gray-800 shadow-lg shadow-orange-500/50 -->
+
+    <!-- PODCASTS -->
+   <main class="flex justify-center pt-12 sm:px-8 border-solid border-black">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/3qGthngYO0KwEJJd7nwsSB?si=1272058988f648b0">
+      <div class="shadow-xl bg-white flex sm:flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl  ">
+        <img src="./images/bitcoin-podden.jpeg" alt="Bitcoin-podden" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Bitcoin-podden</h2>
+          <p class="overflow-y-auto">En galen, ganska extrem duo som har varit förespråkare för Bitcoin sedan 2010. Underhållande och full av karaktär, men inte alltid den mest intressanta.</p>
         </div>
-        <div>
-          <label for="username" class="block font-medium">Användarnamn</label>
-          <input type="text" id="register-username" name="username" class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/1n5z6FpG5bKUFcODrVVmur?si=0b472d2f196d4b25">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/AlltomBitcoin.jpeg" alt="Allt om Bitcoin" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Allt om Bitcoin</h2>
+          <p class="overflow-y-auto">Informationen är mycket bra och dessutom på svenska. Tyvärr är leveransen bristfällig med dålig klippning och monotona uppläsningar. Trots detta är det det bästa vi har på svenska för tillfället."</p>
         </div>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full">Registrera</button>
-      </form>
-      <span id="errorMessage" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
-      <span id="successMessage" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
-      <p id="loginLink" class="text-blue-200 cursor-pointer">Logga in</p>
-    </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/0mWUJuONiilW5JSBBFZ0s7?si=a2a7fbb885dc411c">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/whatBitcoinDid.jpeg" alt="What Bitcoin Did" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">What Bitcoin Did</h2>
+          <p class="overflow-y-auto">Den största Bitcoin-podden. Bland de mest intressanta gästerna. Svävar ibland iväg i privata ämnen, men är mestadels väldigt intressant.</p>
+        </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/0YOEwxAR1uIx1a15QpqE0l?si=26d16d599a804b4d">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/NatalieBrunell.webp" alt="Coins Stories with Natalie Brunell" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Coin Stories with Natalie Brunell</h2>
+          <p class="overflow-y-auto">Före detta nyhetsreporter, vältalig, ställer bra frågor och är genuin. Har både gäster och sammanfattningsavsnitt på 10 minuter varje vecka.</p>
+        </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/28RHOkXkuHuotUrkCdvlOP?si=1389dfb833b74c17">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/PrestonPysh.jpeg" alt="We Study Billionares" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">We Study Billionares</h2>
+          <p class="overflow-y-auto">Var tredje avsnitt handlar om Bitcoin. Preston Pysh har en bra röst, ställer bra frågor, är väldigt intresserad och superentusiastisk kring allt som rör Bitcoin.</p>
+        </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://www.youtube.com/@orangepill">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/orangePillPodcast.jpeg" alt="Orange Pill Podcast" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Orange Pill Podcast</h2>
+          <p class="overflow-y-auto">En galen, ganska extrem duo som har varit förespråkare för Bitcoin sedan 2010. Underhållande och full av karaktär, men inte alltid den mest intressanta.</p>
+        </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/0i4SJwrYjxs3Bd5Yqx4Pbw?si=e67dff3def834b32">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/BitcoinRapidFIre.jpeg" alt="Bitcoin Rapid-Fire" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Bitcoin Rapid-Fire</h2>
+          <p class="overflow-y-auto">En galen, ganska extrem duo som har varit förespråkare för Bitcoin sedan 2010. Underhållande och full av karaktär, men inte alltid den mest intressanta.</p>
+        </div>
+      </div>
+    </a>
+    <a class="flex justify-center max-h-40 lg:max-h-none px-2" href="https://open.spotify.com/show/65cGjse0oWooMqHlTVUida?si=3f935e36328d4dd6">
+      <div class="shadow-xl bg-white flex flex-row justify-center gap-4 mb-4 p-2 cursor-pointer transition-transform duration-300 hover:scale-x-100 rounded-xl ">
+        <img src="./images/bitcoin.review-podcast-og.jpg" alt="Bitcoin.Review Podcast with NVK & Guests" class="h-32 sm:h-36 object-contain rounded-lg" />
+        <div class="flex justify-center flex-col sm:px-4">
+          <h2 class="text-lg sm:text-xl font-semibold">Bitcoin.Review Podcast with NVK & Guests</h2>
+          <p class="overflow-y-auto">En galen, ganska extrem duo som har varit förespråkare för Bitcoin sedan 2010. Underhållande och full av karaktär, men inte alltid den mest intressanta.</p>
+        </div>
+      </div>
+    </a>
   </div>
-</div>
+</main>
 
-<!-- LOGIN FORM -->
-<div id="loginModal" class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden">
-    <div class="flex justify-center items-center h-screen text-white w-full">
-      <div class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative">
-        <button id="close-loginModal" class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none">&times;</button>
-        <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
-        <form class="space-y-8" id="loginForm">
-          <div>
-            <label for="email" class="block font-medium">Email*</label>
-            <input type="email" id="login-email" name="email"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-          </div>
-          <div>
-            <label for="password" class="block font-medium">Lösenord*</label>
-            <input type="password" id="login-password" name="password"  class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500">
-          </div>
-            <button id="loginButton-form" type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full">Logga in</button>
-        </form>
-            <span id="errorMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"></span>
-            <span id="successMessageLogin" class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"></span>
-            <p id="registerLink" class="text-blue-200 cursor-pointer">Registrera</p>
+    
+
+    <!-- FOOTER -->
+    <footer
+      class="position flex justify-center items-end mt-20 text-sm lg:text-xl mb-4 w-full"
+    >
+      <p>
+        &copy <span id="current-year"></span> Bitcoininfo.se All rights reserved
+      </p>
+    </footer>
+
+    <!-- REGISTER FORM-->
+    <div
+      id="registrationModal"
+      class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden"
+    >
+      <div class="flex justify-center items-center h-screen text-white w-full">
+        <div
+          class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative"
+        >
+          <button
+            id="close-registrationModal"
+            class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none"
+          >
+            &times;
+          </button>
+          <h2 class="text-2xl font-bold mb-4 text-center">
+            Registrera Användare
+          </h2>
+          <form id="registrationForm" class="space-y-8">
+            <div>
+              <label for="email" class="block font-medium">Email*</label>
+              <input
+                type="email"
+                id="register-email"
+                name="email"
+                required
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="password" class="block font-medium">Lösenord*</label>
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                required
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="username" class="block font-medium"
+                >Användarnamn</label
+              >
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                class="w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg w-full"
+            >
+              Registrera
+            </button>
+          </form>
+          <span
+            id="errorMessage"
+            class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"
+          ></span>
+          <span
+            id="successMessage"
+            class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"
+          ></span>
+          <p id="loginLink" class="text-blue-200 cursor-pointer">Logga in</p>
+        </div>
       </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-<script src="auth.js"></script>
-</body>
+    <!-- LOGIN FORM -->
+    <div
+      id="loginModal"
+      class="z-20 fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70 hidden"
+    >
+      <div class="flex justify-center items-center h-screen text-white w-full">
+        <div
+          class="rounded-lg overflow-hidden shadow-xl shadow-orange-400/50 mx-4 max-w-xl py-8 px-6 w-full bg-slate-600 relative"
+        >
+          <button
+            id="close-loginModal"
+            class="text-green-500 absolute top-0 right-0 mx-4 text-black-600 text-3xl hover:text-orange-500 focus:outline-none"
+          >
+            &times;
+          </button>
+          <h2 class="text-2xl font-bold mb-4 text-center">Logga in</h2>
+          <form class="space-y-8" id="loginForm">
+            <div>
+              <label for="email" class="block font-medium">Email*</label>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="password" class="block font-medium">Lösenord*</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="mb-8 w-full py-2 px-4 rounded-lg text-black border-gray-300 bg-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <button
+              id="loginButton-form"
+              type="submit"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg w-full"
+            >
+              Logga in
+            </button>
+          </form>
+          <span
+            id="errorMessageLogin"
+            class="hidden flex text-lg md:text-2xl justify-center text-rose-400 text-center"
+          ></span>
+          <span
+            id="successMessageLogin"
+            class="hidden flex text-lg md:text-2xl justify-center text-green-400 text-center"
+          ></span>
+          <p id="registerLink" class="text-blue-200 cursor-pointer">
+            Registrera
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+  </body>
 </html>

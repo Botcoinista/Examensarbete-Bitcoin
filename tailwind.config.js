@@ -10,6 +10,11 @@ module.exports = {
       colors: {
         primary: '#FFA500', // Adjust the hex code to your desired primary color
       },
+      height: {
+        '100': '25rem', // Custom height value
+        '120': '30rem', // Another custom height value
+        '140': '35rem', // Yet another custom height value
+      },
     },
   },
   plugins: [],

@@ -80,7 +80,14 @@ a {
     border-color: orange; /* Change border color when focused */
 }
 
+.image-wrapper {
+    width: 100%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width to control how wide the image can get */
+    margin: 0 auto; /* Center the image */
+  }
+  
 
+  
 
 
 
