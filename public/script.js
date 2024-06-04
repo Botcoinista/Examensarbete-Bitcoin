@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    // Close modal if close button exists
     const closeModalButton = document.getElementById("close-modal");
     if (closeModalButton) {
       closeModalButton.addEventListener("click", function () {
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    // Close modal if user clicks outside the modal
     modal.addEventListener("click", function (e) {
       if (e.target === modal) {
         modal.classList.add("hidden");
